@@ -428,6 +428,7 @@ document.addEventListener('DOMContentLoaded', () => {
         help: `Available CLI Commands:
   - <strong>skills</strong>     : Display categorized tech stack & proficiencies
   - <strong>projects</strong>   : List key software & AI projects
+  - <strong>certs</strong>      : View Robotics & AI Innovation Engineer and certifications
   - <strong>experience</strong> : Inspect internship history at Q-Spider & CodSoft
   - <strong>about</strong>      : Read engineering background & bio
   - <strong>education</strong>  : Academic credentials (B.Tech CSE @ AKTU)
@@ -440,8 +441,25 @@ document.addEventListener('DOMContentLoaded', () => {
   • Languages: Python, JavaScript (ES6+), C, Node.js
   • Frameworks: Django, ReactJS, REST APIs
   • Core CS: DSA, DAA, DBMS, Operating Systems, Automata
-  • Data & AI: MySQL, Power BI, OpenAI GPT APIs, SpeechRecognition
+  • Data & AI: Robotics & AI Systems, MySQL, Power BI, OpenAI GPT, Electronics, Speech APIs
   • Tools: Git, GitHub, VS Code, Windows Terminal`,
+
+        certs: `Honors & Certified Credentials:
+  ★ Robotics & AI Innovation Engineer (Jun - Sep 2026)
+    - The Smart Minds AI Lab (A Unit of Roboveritas AI Solutions)
+    - Mastered autonomous robotics, artificial intelligence, electronics, & project training.
+  • Data Analytics & Forensic Technology — Deloitte Simulation
+  • AI Agent Hackathon — Product Space
+  • Certificate of Appreciation — Zyntiq Organization
+  • Vibe Coding Session — Rehber Program`,
+        achievements: `Honors & Certified Credentials:
+  ★ Robotics & AI Innovation Engineer (Jun - Sep 2026)
+    - The Smart Minds AI Lab (A Unit of Roboveritas AI Solutions)
+    - Mastered autonomous robotics, artificial intelligence, electronics, & project training.
+  • Data Analytics & Forensic Technology — Deloitte Simulation
+  • AI Agent Hackathon — Product Space
+  • Certificate of Appreciation — Zyntiq Organization
+  • Vibe Coding Session — Rehber Program`,
 
         projects: `Featured Systems & Code Repositories:
   [1] Voice-Controlled Virtual Assistant (Python, OpenAI GPT, SpeechRecognition, gTTS)
@@ -804,7 +822,7 @@ Ready to build, ship, and scale high-impact software solutions with your team!`
     const previewModal = document.getElementById('preview-modal');
     const modalImg = document.getElementById('modal-img');
     const modalCloseBtn = document.getElementById('modal-close-btn');
-    const triggerElements = document.querySelectorAll('.project-preview-frame, .inspect-output-btn');
+    const triggerElements = document.querySelectorAll('.project-preview-frame, .inspect-output-btn, .cert-preview-wrapper');
 
     function openOutputModal(src) {
         if (!previewModal || !modalImg || !src) return;
