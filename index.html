@@ -4,194 +4,741 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sachin | Portfolio</title>
+    <title>Sachin | Full-Stack Developer & Software Engineer</title>
+    <meta name="description" content="Personal portfolio of Sachin - Computer Science Engineer, Python Full-Stack Developer, and AI enthusiast.">
+    <link rel="icon" type="image/svg+xml" href="github.svg">
+
+    <!-- Google Fonts for High-Tech Developer Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Main Stylesheet -->
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <nav>
-        <div class="logo">Sachin</div>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#achievements">Achievements</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <button id="theme-toggle">🌙</button>
-    </nav>
+    <!-- Three.js Interactive 3D WebGL Canvas -->
+    <canvas id="webgl-canvas"></canvas>
 
-    <header>
-        <div class="hero-flex">
-            <div class="hero-img">
-                <img src="image1.png" alt="Profile Photo">
-            </div>
-            <div class="hero-text">
-                <h1>Hello, I'm <span class="highlight">Sachin</span></h1>
-                <h3>Full-Stack Developer </h3>
-                <p>
-                    Enthusiastic and detail-oriented Computer Science student skilled in Python Full-Stack Development.<br>
-                    Adept at designing efficient solutions, troubleshooting, and building robust systems using modern
-                    technologies.<br>
-                    Thrive in collaborative environments and ready for new challenges!
-                </p>
-                <div class="hero-cta">
-                    <a href="Sachin Resume.pdf" download class="btn">Download Resume</a>
-                    <a href="#contact" class="btn">Contact Me</a>
+    <!-- Custom Laser & Ring Dual Cursor -->
+    <div id="custom-cursor-dot"></div>
+    <div id="custom-cursor-ring">
+        <span class="cursor-text">VIEW</span>
+    </div>
+    <canvas id="cursor-trail-canvas"></canvas>
+
+    <div class="page-wrapper">
+        <!-- Navigation Bar -->
+        <nav class="navbar" id="navbar">
+            <div class="nav-container">
+                <a href="#hero" class="brand-logo" data-cursor="ROOT">
+                    <span class="code-bracket">&lt;</span>Sachin<span class="code-bracket">.dev /&gt;</span>
+                    <span class="terminal-cursor"></span>
+                </a>
+
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#about" class="nav-link" data-cursor="ABOUT">about</a></li>
+                    <li><a href="#terminal-section" class="nav-link" data-cursor="CLI">terminal</a></li>
+                    <li><a href="#experience" class="nav-link" data-cursor="EXP">experience</a></li>
+                    <li><a href="#projects" class="nav-link" data-cursor="WORK">projects</a></li>
+                    <li><a href="#skills" class="nav-link" data-cursor="SKILLS">skills</a></li>
+                    <li><a href="#achievements" class="nav-link" data-cursor="AWARDS">achievements</a></li>
+                    <li><a href="#contact" class="nav-link" data-cursor="PING">contact</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <!-- Sound Micro-interaction Toggle -->
+                    <button class="icon-btn" id="sound-toggle" title="Toggle Tech Audio FX" aria-label="Toggle Audio" data-cursor="AUDIO">
+                        <span id="sound-icon">🔇</span>
+                    </button>
+                    <!-- Theme Mode Toggle -->
+                    <button class="icon-btn" id="theme-toggle" title="Toggle Cyber / Light Theme" aria-label="Toggle Theme" data-cursor="THEME">
+                        <span id="theme-icon">🌙</span>
+                    </button>
+                    <!-- Mobile Hamburger -->
+                    <button class="icon-btn mobile-menu-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+                        ☰
+                    </button>
                 </div>
-                <div class="social-links">
-                    <a href="mailto:sachin022AI0064@rdec.in" aria-label="Email"><img src="mail.svg" alt=""></a>
-                    <a href="https://github.com/" target="_blank" aria-label="GitHub"><img src="github.svg" alt=""></a>
-                    <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn"><img src="linkedin.svg"
-                            alt=""></a>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <header class="hero-section" id="hero">
+            <div class="hero-content">
+                <div class="status-pill fade-in-up">
+                    <span class="radar-ping"></span>
+                    <span>Available for Opportunities • B.Tech CSE '26</span>
+                </div>
+
+                <h1 class="hero-title fade-in-up">
+                    Hello, I'm <br>
+                    <span class="gradient-text">Sachin</span>
+                </h1>
+
+                <!-- Typewriter Dynamic Headline -->
+                <div class="hero-subtitle-box fade-in-up">
+                    <span class="typewriter-prompt">&gt;</span>
+                    <span class="typewriter-text" id="typewriter">Full-Stack Developer</span>
+                </div>
+
+                <p class="hero-bio fade-in-up">
+                    Computer Science Engineer passionate about building intelligent systems and scalable web applications.
+                    Specialized in <strong>Python, Django, ReactJS</strong>, and AI agent architectures. Adept at turning complex problems
+                    into clean, high-performance code.
+                </p>
+
+                <div class="hero-actions fade-in-up">
+                    <a href="#projects" class="btn btn-primary" data-cursor="EXPLORE">
+                        <span>Explore Projects</span>
+                        <span>⚡</span>
+                    </a>
+                    <a href="#terminal-section" class="btn btn-secondary" data-cursor="LAUNCH">
+                        <span>Launch Terminal</span>
+                        <span>⌨️</span>
+                    </a>
+                    <a href="Sachin Resume.pdf" download="Sachin_Resume.pdf" class="btn btn-outline" data-cursor="GET CV">
+                        <span>Download CV</span>
+                        <span>📄</span>
+                    </a>
+                </div>
+
+                <div class="hero-socials fade-in-up">
+                    <a href="mailto:sachin022AI0064@rdec.in" class="social-pill" title="Email Sachin" data-cursor="MAIL">
+                        <img src="mail.svg" alt="Email">
+                    </a>
+                    <a href="https://github.com/sachin1399" target="_blank" rel="noopener noreferrer" class="social-pill" title="GitHub Profile" data-cursor="GITHUB">
+                        <img src="github.svg" alt="GitHub">
+                    </a>
+                    <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="social-pill" title="LinkedIn Profile" data-cursor="LINKEDIN">
+                        <img src="linkedin.svg" alt="LinkedIn">
+                    </a>
                 </div>
             </div>
-        </div>
-    </header>
 
-    <section id="about" class="fade-in-up">
-        <h2>About Me</h2>
-        <p>
-            I am pursuing a Bachelor of Technology in Computer Science and Engineering (2022 - Present, AKTU,
-            Lucknow).<br>
-            Strong in analytical thinking and problem-solving, with hands-on experience in Qspider on Python full-stack
-            web development.<br>
-            Passionate about automating and streamlining processes using efficient, maintainable code.
-        </p>
-    </section>
+            <!-- Hero Visual Hologram & Photo -->
+            <div class="hero-visual-stage fade-in-up">
+                <div class="avatar-hologram-wrapper">
+                    <!-- Rotating Cyber Halo Rings -->
+                    <div class="cyber-ring cyber-ring-outer"></div>
+                    <div class="cyber-ring cyber-ring-inner"></div>
 
-    <section id="experience" class="fade-in-up">
-        <h2>Experience</h2>
-        <div class="exp-card hover-pop">
-            <h3>Full-Stack Development Intern</h3>
-            <span>Q-spider-NOIDA | Sep 2025 - Dec 2025</span>
-            <ul>
-                <li>Completed a 4-month internship focused on Python Full Stack development.
-                    <b>Python</b> Advance Python <b>Django</b> (backend).</li>
-                <li> <b>ReactJS</b> HTML <b>CSS</b> (frontend).</li>
-            </ul>
-        </div>
-        <div class="exp-card hover-pop">
-            <h3>Python Programming Intern </h3>
-            <span>Python Programming Intern-Codsoft| Jul 2025 - Aug 2025</span>
-            <ul>
-                <li>Strengthened core Python concepts including data types, control structures, functions, and basic problem-solving..</li>
-                <li>Gained practical exposure to Python programming through a structured internship at CodSoft, 
-                    focusing on writing clean, efficient, and logical code.</li>
-            </ul>
-        </div>
-    </section>
+                    <!-- Profile Image with Holographic Glow -->
+                    <div class="avatar-frame card-3d">
+                        <img src="image1.png" alt="Sachin - Full-Stack Developer" class="avatar-img">
+                    </div>
 
-    <section id="projects" class="fade-in-up">
-        <h2>Projects</h2>
-        <div class="project-list">
-            <div class="project-card animate hover-pop">
-                <h3>Voice-Controlled Virtual Assistant</h3>
-                <p>
-                    Python, speechrecognition, OpenAI, gTTS<br>
-                <ul>
-                    <li>Created a voice assistant to handle web browsing, news retrieval (using NewsAPI), music
-                        playback, and user commands.</li>
-                    <li>Integrated OpenAI’s GPT for natural language responses; used SpeechRecognition for input and
-                        gTTS/pygame for TTS and audio playback.</li>
-                </ul>
-                </p>
+                    <!-- Floating Tech Badges -->
+                    <div class="floating-badge floating-badge-1">
+                        <span>🐍</span> Python & Django
+                    </div>
+                    <div class="floating-badge floating-badge-2">
+                        <span>⚛️</span> React & Node
+                    </div>
+                    <div class="floating-badge floating-badge-3">
+                        <span>🤖</span> AI & Agents
+                    </div>
+                </div>
             </div>
-            <div class="project-card animate hover-pop">
-                <h3>Code Comics</h3>
-                <p>
-                    HTML, CSS, JavaScript<br>
-                <ul>
-                    <li>Designed and developed a responsive comics web application to display and manage comic content in an interactive form
-                    </li>
-                    <li>Implemented dynamic UI components using JavaScript to enhance user interaction and smooth navigation.</li>
-                    <li>Focused on clean UI, performance optimization, and user-friendly experience.</li>
-                </ul>
-                </p>
+        </header>
+
+        <!-- Developer HUD / Stats Bar -->
+        <section class="stats-bar-section fade-in-up">
+            <div class="stats-grid">
+                <div class="stat-card spotlight-card card-3d">
+                    <span class="stat-icon">💼</span>
+                    <div class="stat-number">4+ <span class="highlight">Mos</span></div>
+                    <div class="stat-label">Internship Experience</div>
+                </div>
+                <div class="stat-card spotlight-card card-3d">
+                    <span class="stat-icon">🚀</span>
+                    <div class="stat-number">3+ <span class="highlight">Projects</span></div>
+                    <div class="stat-label">Full-Stack & AI Built</div>
+                </div>
+                <div class="stat-card spotlight-card card-3d">
+                    <span class="stat-icon">⚡</span>
+                    <div class="stat-number">18+ <span class="highlight">Tech</span></div>
+                    <div class="stat-label">Languages & Frameworks</div>
+                </div>
+                <div class="stat-card spotlight-card card-3d">
+                    <span class="stat-icon">🎯</span>
+                    <div class="stat-number">100<span class="highlight">%</span></div>
+                    <div class="stat-label">Dedication to Code</div>
+                </div>
             </div>
-            <div class="project-card animate hover-pop">
-                <h3>Fuel Analytics Dashboard</h3>
-                <p>
-                   Power -bi<br>
-                <ul>
-                    <li>Designed and developed an interactive Power BI dashboard to analyze fuel consumption, cost trends, and usage patterns.</li>
-                    <li>Visualized key performance metrics using charts, graphs, and filters for better decision-making.</li>
-                    <li>Improved data readability and reporting efficiency through dynamic dashboards and slicers.</li>
-                </ul>
-                </p>
+        </section>
+
+        <!-- Interactive Developer Terminal & IDE Code Section -->
+        <section class="content-section fade-in-up" id="terminal-section">
+            <div class="section-header">
+                <span class="section-tag">// INTERACTIVE SHELL</span>
+                <h2 class="section-title">Developer Terminal &amp; Code</h2>
+                <p class="section-desc">Experience my profile through a simulated Unix terminal or inspect my developer configuration in pure Python.</p>
             </div>
 
-            <!-- Add more projects when needed -->
+            <div class="terminal-window-wrapper">
+                <div class="mac-window spotlight-card card-3d">
+                    <div class="window-chrome">
+                        <div class="window-dots">
+                            <span class="window-dot red" title="Close"></span>
+                            <span class="window-dot yellow" title="Minimize"></span>
+                            <span class="window-dot green" title="Maximize"></span>
+                        </div>
+                        <div class="window-tabs">
+                            <button class="window-tab active" id="tab-terminal-btn" data-cursor="TAB">bash ~ sachin-os</button>
+                            <button class="window-tab" id="tab-code-btn" data-cursor="TAB">developer.py</button>
+                        </div>
+                        <span class="window-title">zsh • 80x24</span>
+                    </div>
+
+                    <!-- Terminal View -->
+                    <div class="terminal-content" id="terminal-view">
+                        <div class="terminal-history" id="terminal-history">
+                            <div class="terminal-line">
+                                <span class="terminal-prompt-label">sachin@dev-box:~$</span>
+                                <span>neofetch --portfolio</span>
+                            </div>
+                            <div class="terminal-output info">
+                                ╔═══════════════════════════════════════════════════════════╗<br>
+                                ║ &nbsp;SACHIN.DEV OS v2.4 (x86_64 Full-Stack Architecture)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;║<br>
+                                ║ &nbsp;Role:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Full-Stack Python &amp; Django Developer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;║<br>
+                                ║ &nbsp;Degree:&nbsp;&nbsp;&nbsp;&nbsp;B.Tech CSE (2022 - Present, AKTU)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;║<br>
+                                ║ &nbsp;Status:&nbsp;&nbsp;&nbsp;&nbsp;🟢 Available for Internships / SDE Roles&nbsp;&nbsp;&nbsp;&nbsp;║<br>
+                                ╚═══════════════════════════════════════════════════════════╝<br>
+                                Type <strong style="color: var(--primary-cyan);">help</strong> to see all available commands, or click the quick chips below!
+                            </div>
+                        </div>
+
+                        <div class="terminal-input-row">
+                            <span class="terminal-prompt-label">sachin@dev-box:~$</span>
+                            <input type="text" id="terminal-input" class="terminal-input" placeholder="type 'help', 'skills', 'projects', 'sudo hire'..." autocomplete="off" spellcheck="false">
+                        </div>
+                    </div>
+
+                    <!-- Code Snippet View -->
+                    <div class="code-tab-content" id="code-view">
+                        <div class="code-header-action">
+                            <button class="copy-code-btn" id="copy-code-btn" data-cursor="COPY">📋 Copy Code</button>
+                        </div>
+                        <pre class="code-syntax"><code><span class="code-comment"># Developer Profile Configuration: developer.py</span>
+<span class="code-keyword">from</span> dataclasses <span class="code-keyword">import</span> dataclass, field
+<span class="code-keyword">from</span> typing <span class="code-keyword">import</span> List, Dict
+
+<span class="code-keyword">@dataclass</span>
+<span class="code-keyword">class</span> <span class="code-class">SoftwareEngineer</span>:
+    name: <span class="code-class">str</span> = <span class="code-str">"Sachin"</span>
+    role: <span class="code-class">str</span> = <span class="code-str">"Full-Stack Developer"</span>
+    education: <span class="code-class">str</span> = <span class="code-str">"B.Tech in Computer Science & Engineering (AKTU)"</span>
+    core_stack: List[<span class="code-class">str</span>] = field(default_factory=<span class="code-keyword">lambda</span>: [
+        <span class="code-str">"Python"</span>, <span class="code-str">"Django"</span>, <span class="code-str">"ReactJS"</span>, <span class="code-str">"JavaScript"</span>, <span class="code-str">"Node.js"</span>, <span class="code-str">"MySQL"</span>
+    ])
+    interests: List[<span class="code-class">str</span>] = field(default_factory=<span class="code-keyword">lambda</span>: [
+        <span class="code-str">"AI Autonomous Agents"</span>, <span class="code-str">"Distributed Systems"</span>, <span class="code-str">"Web Performance"</span>
+    ])
+
+    <span class="code-keyword">def</span> <span class="code-func">solve_problem</span>(self, challenge: <span class="code-class">str</span>) -&gt; <span class="code-class">str</span>:
+        <span class="code-comment"># Transform complex challenges into elegant, resilient code</span>
+        <span class="code-keyword">return</span> f<span class="code-str">"Engineered robust solution for: {challenge} with 100% test coverage"</span>
+
+<span class="code-comment"># Initialize profile</span>
+developer = <span class="code-class">SoftwareEngineer</span>()
+<span class="code-func">print</span>(developer.solve_problem(<span class="code-str">"Scalable Web Architecture"</span>))
+</code></pre>
+                    </div>
+
+                    <!-- Quick Command Chips -->
+                    <div class="terminal-quick-chips">
+                        <span class="quick-chip-label">Quick Commands:</span>
+                        <button class="command-chip" data-cmd="help" data-cursor="RUN">help</button>
+                        <button class="command-chip" data-cmd="skills" data-cursor="RUN">skills</button>
+                        <button class="command-chip" data-cmd="projects" data-cursor="RUN">projects</button>
+                        <button class="command-chip" data-cmd="sudo hire" data-cursor="RUN">sudo hire</button>
+                        <button class="command-chip" data-cmd="clear" data-cursor="RUN">clear</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section class="content-section fade-in-up" id="about">
+            <div class="section-header">
+                <span class="section-tag">// 01. ARCHITECTURE</span>
+                <h2 class="section-title">About Me</h2>
+                <p class="section-desc">Engineering resilient systems, clean APIs, and engaging digital experiences.</p>
+            </div>
+
+            <div class="spotlight-card card-3d" style="padding: 2.2rem;">
+                <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-body); margin-bottom: 1.2rem;">
+                    I am currently pursuing a <strong>Bachelor of Technology in Computer Science and Engineering</strong> (2022 – Present) from <strong>AKTU, Lucknow</strong>.
+                    My journey in technology is driven by a deep curiosity about how systems work under the hood and an obsession with crafting smooth, responsive software.
+                </p>
+                <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-body); margin-bottom: 1.2rem;">
+                    With hands-on experience through structured full-stack internships at <strong>Q-Spiders NOIDA</strong> and <strong>CodSoft</strong>, I've developed core proficiencies in Python, Django, REST APIs, and modern JavaScript frontends. I love writing clean, maintainable, modular code and experimenting with emerging technologies like Three.js and autonomous AI agents.
+                </p>
+                <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-body);">
+                    When I'm not writing code, I actively participate in hackathons, refine algorithm problem solving (DSA), and analyze business datasets with Power BI.
+                </p>
+            </div>
+        </section>
+
+        <!-- Experience Timeline Section -->
+        <section class="content-section fade-in-up" id="experience">
+            <div class="section-header">
+                <span class="section-tag">// 02. CAREER TRACK</span>
+                <h2 class="section-title">Professional Experience</h2>
+                <p class="section-desc">My industry journey, internships, and technical responsibilities.</p>
+            </div>
+
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+
+                <!-- Experience Item 1 -->
+                <div class="timeline-item fade-in-up">
+                    <div class="timeline-node"></div>
+                    <div class="exp-card spotlight-card card-3d">
+                        <div class="exp-header">
+                            <h3 class="exp-role">Full-Stack Development Intern</h3>
+                            <span class="exp-badge">Sep 2025 - Dec 2025</span>
+                        </div>
+                        <div class="exp-org">Q-Spider — NOIDA</div>
+                        <ul class="exp-details">
+                            <li>Completed an intensive 4-month professional internship focused on Python Full-Stack web development.</li>
+                            <li>Engineered backend logic, database schemas, and RESTful routing using <strong>Python, Advanced Python &amp; Django</strong>.</li>
+                            <li>Constructed responsive, interactive frontend components with <strong>ReactJS, HTML5, and CSS3</strong>.</li>
+                            <li>Practiced agile development methodologies, code reviews, and performance optimizations.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience Item 2 -->
+                <div class="timeline-item fade-in-up">
+                    <div class="timeline-node"></div>
+                    <div class="exp-card spotlight-card card-3d">
+                        <div class="exp-header">
+                            <h3 class="exp-role">Python Programming Intern</h3>
+                            <span class="exp-badge">Jul 2025 - Aug 2025</span>
+                        </div>
+                        <div class="exp-org">CodSoft — Remote</div>
+                        <ul class="exp-details">
+                            <li>Strengthened core Python foundations including object-oriented programming (OOP), data types, control flow, and error handling.</li>
+                            <li>Authored automated scripts and algorithmic solutions emphasizing code modularity and execution efficiency.</li>
+                            <li>Collaborated with mentor reviews to adhere to clean code standards and PEP 8 guidelines.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Showcase Section -->
+        <section class="content-section fade-in-up" id="projects">
+            <div class="section-header">
+                <span class="section-tag">// 03. CODE REPOSITORIES</span>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-desc">A selection of systems, interactive web applications, and analytics dashboards I've engineered.</p>
+            </div>
+
+            <!-- Project Category Filter -->
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all" data-cursor="FILTER">All Projects</button>
+                <button class="filter-btn" data-filter="fullstack" data-cursor="FILTER">Full-Stack &amp; Web</button>
+                <button class="filter-btn" data-filter="ai" data-cursor="FILTER">Python &amp; AI</button>
+                <button class="filter-btn" data-filter="data" data-cursor="FILTER">Data &amp; Analytics</button>
+            </div>
+
+            <div class="projects-grid" id="projects-grid">
+                <!-- Project 1: Voice Assistant -->
+                <div class="project-card spotlight-card card-3d" data-category="ai">
+                    <div class="project-card-header">
+                        <span class="project-badge">Python / AI Engine</span>
+                        <div class="project-icon">🎙️</div>
+                    </div>
+
+                    <!-- Project Output Visual Preview -->
+                    <div class="project-preview-frame" data-modal="output-assistant.svg" data-cursor="ZOOM" title="Click to inspect output">
+                        <img src="output-assistant.svg" alt="Voice Assistant Real-time Output Preview" class="project-preview-img">
+                        <div class="preview-overlay">
+                            <span class="preview-badge">🔍 Output Preview</span>
+                        </div>
+                    </div>
+
+                    <h3 class="project-title">Voice-Controlled Virtual Assistant</h3>
+                    <p class="project-desc">
+                        An intelligent AI-driven personal desktop assistant capable of natural voice command interpretation, web automation, real-time news aggregation, and automated responses.
+                    </p>
+                    <ul class="project-bullets">
+                        <li>Integrated OpenAI GPT models for context-aware conversational intelligence.</li>
+                        <li>Utilized SpeechRecognition and gTTS/Pygame for real-time speech-to-text and auditory audio playback.</li>
+                        <li>Automated web queries, application launching, and live news streaming via NewsAPI.</li>
+                    </ul>
+                    <div class="project-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">OpenAI API</span>
+                        <span class="tech-tag">SpeechRecognition</span>
+                        <span class="tech-tag">gTTS</span>
+                        <span class="tech-tag">NewsAPI</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="https://github.com/sachin1399" target="_blank" rel="noopener noreferrer" class="project-link primary" data-cursor="GITHUB">
+                            <span>View Source</span> ↗
+                        </a>
+                        <button class="project-link secondary inspect-output-btn" data-modal="output-assistant.svg" data-cursor="ZOOM">
+                            <span>Inspect O/P</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 2: Code Comics -->
+                <div class="project-card spotlight-card card-3d" data-category="fullstack">
+                    <div class="project-card-header">
+                        <span class="project-badge">Web Application</span>
+                        <div class="project-icon">🎨</div>
+                    </div>
+
+                    <!-- Project Output Visual Preview -->
+                    <div class="project-preview-frame" data-modal="output-comics.svg" data-cursor="ZOOM" title="Click to inspect output">
+                        <img src="output-comics.svg" alt="Code Comics Web App Output Preview" class="project-preview-img">
+                        <div class="preview-overlay">
+                            <span class="preview-badge">🔍 Output Preview</span>
+                        </div>
+                    </div>
+
+                    <h3 class="project-title">Code Comics Web App</h3>
+                    <p class="project-desc">
+                        An interactive, highly responsive web application built to curate, present, and navigate programmer-oriented comics and visual programming tutorials.
+                    </p>
+                    <ul class="project-bullets">
+                        <li>Designed dynamic UI components and reader modes using vanilla JavaScript and CSS Grid.</li>
+                        <li>Engineered smooth slide transitions, category filtering, and bookmarking interactions.</li>
+                        <li>Optimized asset loading times, ensuring seamless cross-device mobile responsiveness.</li>
+                    </ul>
+                    <div class="project-tags">
+                        <span class="tech-tag">JavaScript (ES6+)</span>
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">Responsive UI</span>
+                        <span class="tech-tag">DOM APIs</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="https://github.com/sachin1399" target="_blank" rel="noopener noreferrer" class="project-link primary" data-cursor="GITHUB">
+                            <span>View Source</span> ↗
+                        </a>
+                        <button class="project-link secondary inspect-output-btn" data-modal="output-comics.svg" data-cursor="ZOOM">
+                            <span>Inspect O/P</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 3: Fuel Analytics Dashboard -->
+                <div class="project-card spotlight-card card-3d" data-category="data">
+                    <div class="project-card-header">
+                        <span class="project-badge">Data Intelligence</span>
+                        <div class="project-icon">📊</div>
+                    </div>
+
+                    <!-- Project Output Visual Preview -->
+                    <div class="project-preview-frame" data-modal="output-dashboard.svg" data-cursor="ZOOM" title="Click to inspect output">
+                        <img src="output-dashboard.svg" alt="Power BI Fuel Analytics Output Preview" class="project-preview-img">
+                        <div class="preview-overlay">
+                            <span class="preview-badge">🔍 Output Preview</span>
+                        </div>
+                    </div>
+
+                    <h3 class="project-title">Fuel Analytics Dashboard</h3>
+                    <p class="project-desc">
+                        A comprehensive business intelligence dashboard designed to monitor corporate fuel consumption trends, cost anomalies, and operational fleet expenditures.
+                    </p>
+                    <ul class="project-bullets">
+                        <li>Developed interactive Power BI dashboards using custom DAX measures and dimensional modeling.</li>
+                        <li>Visualized cost efficiency KPIs, seasonal consumption patterns, and route variances.</li>
+                        <li>Streamlined executive decision-making through dynamic multi-attribute slicers.</li>
+                    </ul>
+                    <div class="project-tags">
+                        <span class="tech-tag">Power BI</span>
+                        <span class="tech-tag">DAX</span>
+                        <span class="tech-tag">Data Modeling</span>
+                        <span class="tech-tag">KPI Metrics</span>
+                        <span class="tech-tag">Analytics</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="https://github.com/sachin1399" target="_blank" rel="noopener noreferrer" class="project-link primary" data-cursor="GITHUB">
+                            <span>View Source</span> ↗
+                        </a>
+                        <button class="project-link secondary inspect-output-btn" data-modal="output-dashboard.svg" data-cursor="ZOOM">
+                            <span>Inspect O/P</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills Matrix Section -->
+        <section class="content-section fade-in-up" id="skills">
+            <div class="section-header">
+                <span class="section-tag">// 04. TECH STACK</span>
+                <h2 class="section-title">Technical Proficiency</h2>
+                <p class="section-desc">Tools, languages, and frameworks I use to engineer modern software solutions.</p>
+            </div>
+
+            <div class="skills-category-grid">
+                <!-- Group 1: Languages & Backend -->
+                <div class="skills-group-card spotlight-card card-3d">
+                    <div class="group-header">
+                        <span class="group-icon">⚡</span>
+                        <h3 class="group-title">Languages &amp; Backend</h3>
+                    </div>
+                    <div class="skill-pills-wrap">
+                        <span class="skill-pill" data-cursor="TECH">🐍 Python</span>
+                        <span class="skill-pill" data-cursor="TECH">🔥 Django</span>
+                        <span class="skill-pill" data-cursor="TECH">🟡 JavaScript (ES6+)</span>
+                        <span class="skill-pill" data-cursor="TECH">🟢 Node.js</span>
+                        <span class="skill-pill" data-cursor="TECH">⚙️ C Language</span>
+                        <span class="skill-pill" data-cursor="TECH">🌐 REST APIs</span>
+                    </div>
+                </div>
+
+                <!-- Group 2: Frontend & UI -->
+                <div class="skills-group-card spotlight-card card-3d">
+                    <div class="group-header">
+                        <span class="group-icon">🎨</span>
+                        <h3 class="group-title">Frontend &amp; Creative Web</h3>
+                    </div>
+                    <div class="skill-pills-wrap">
+                        <span class="skill-pill" data-cursor="TECH">⚛️ ReactJS</span>
+                        <span class="skill-pill" data-cursor="TECH">🌐 Three.js 3D</span>
+                        <span class="skill-pill" data-cursor="TECH">📄 HTML5</span>
+                        <span class="skill-pill" data-cursor="TECH">🎭 CSS3 &amp; Flex/Grid</span>
+                        <span class="skill-pill" data-cursor="TECH">📱 Responsive Design</span>
+                        <span class="skill-pill" data-cursor="TECH">✨ Glassmorphism UI</span>
+                    </div>
+                </div>
+
+                <!-- Group 3: CS Core & Foundations -->
+                <div class="skills-group-card spotlight-card card-3d">
+                    <div class="group-header">
+                        <span class="group-icon">🧠</span>
+                        <h3 class="group-title">Computer Science Core</h3>
+                    </div>
+                    <div class="skill-pills-wrap">
+                        <span class="skill-pill" data-cursor="TECH">🌳 Data Structures (DSA)</span>
+                        <span class="skill-pill" data-cursor="TECH">📐 Analysis of Algorithms (DAA)</span>
+                        <span class="skill-pill" data-cursor="TECH">💽 Operating Systems (OS)</span>
+                        <span class="skill-pill" data-cursor="TECH">🏛️ DBMS &amp; Architecture</span>
+                        <span class="skill-pill" data-cursor="TECH">🔄 Automata Theory</span>
+                        <span class="skill-pill" data-cursor="TECH">🛠️ SDE Principles</span>
+                    </div>
+                </div>
+
+                <!-- Group 4: Data, AI & Databases -->
+                <div class="skills-group-card spotlight-card card-3d">
+                    <div class="group-header">
+                        <span class="group-icon">📊</span>
+                        <h3 class="group-title">Data, AI &amp; Databases</h3>
+                    </div>
+                    <div class="skill-pills-wrap">
+                        <span class="skill-pill" data-cursor="TECH">🐬 MySQL</span>
+                        <span class="skill-pill" data-cursor="TECH">📈 Power BI</span>
+                        <span class="skill-pill" data-cursor="TECH">🤖 AI Agents &amp; LLMs</span>
+                        <span class="skill-pill" data-cursor="TECH">🔍 Data Analytics</span>
+                        <span class="skill-pill" data-cursor="TECH">🗣️ Speech &amp; Audio APIs</span>
+                        <span class="skill-pill" data-cursor="TECH">💡 Prompt Engineering</span>
+                    </div>
+                </div>
+
+                <!-- Group 5: Developer Tools & Workflow -->
+                <div class="skills-group-card spotlight-card card-3d">
+                    <div class="group-header">
+                        <span class="group-icon">🛠️</span>
+                        <h3 class="group-title">Dev Tools &amp; Environment</h3>
+                    </div>
+                    <div class="skill-pills-wrap">
+                        <span class="skill-pill" data-cursor="TECH">🐙 Git &amp; GitHub</span>
+                        <span class="skill-pill" data-cursor="TECH">💻 VS Code</span>
+                        <span class="skill-pill" data-cursor="TECH">🖥️ Visual Studio</span>
+                        <span class="skill-pill" data-cursor="TECH">📟 Windows Terminal / Bash</span>
+                        <span class="skill-pill" data-cursor="TECH">📦 NPM / Pip</span>
+                        <span class="skill-pill" data-cursor="TECH">🔧 Postman</span>
+                    </div>
+                </div>
+
+                <!-- Group 6: Analytical & Soft Skills -->
+                <div class="skills-group-card spotlight-card card-3d">
+                    <div class="group-header">
+                        <span class="group-icon">💡</span>
+                        <h3 class="group-title">Core Competencies</h3>
+                    </div>
+                    <div class="skill-pills-wrap">
+                        <span class="skill-pill" data-cursor="TECH">🧩 Analytical Thinking</span>
+                        <span class="skill-pill" data-cursor="TECH">🎯 Problem Solving</span>
+                        <span class="skill-pill" data-cursor="TECH">🤝 Team Collaboration</span>
+                        <span class="skill-pill" data-cursor="TECH">📚 Fast Technical Learner</span>
+                        <span class="skill-pill" data-cursor="TECH">⚡ Agile Execution</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements & Certifications Section -->
+        <section class="content-section fade-in-up" id="achievements">
+            <div class="section-header">
+                <span class="section-tag">// 05. HONORS &amp; BADGES</span>
+                <h2 class="section-title">Achievements &amp; Certificates</h2>
+                <p class="section-desc">Milestones, hackathons, and certifications recognizing excellence.</p>
+            </div>
+
+            <div class="achievements-grid">
+                <div class="achievement-card spotlight-card card-3d">
+                    <span class="achievement-icon">🏆</span>
+                    <h3 class="achievement-title">Data Analytics &amp; Forensic Technology</h3>
+                    <span class="achievement-issuer">Deloitte Simulation</span>
+                    <p class="achievement-desc">Completed the Deloitte Data Analytics Job Simulation, solving practical corporate data analysis and forensics problems.</p>
+                </div>
+
+                <div class="achievement-card spotlight-card card-3d">
+                    <span class="achievement-icon">⚡</span>
+                    <h3 class="achievement-title">AI Agent Hackathon</h3>
+                    <span class="achievement-issuer">Product Space</span>
+                    <p class="achievement-desc">Participated in an intensive hackathon building autonomous AI agents and solving complex workflow automations.</p>
+                </div>
+
+                <div class="achievement-card spotlight-card card-3d">
+                    <span class="achievement-icon">🎖️</span>
+                    <h3 class="achievement-title">Certificate of Appreciation</h3>
+                    <span class="achievement-issuer">Zyntiq Organization</span>
+                    <p class="achievement-desc">Awarded for consistent effort, valuable contributions, and outstanding commitment to team objectives.</p>
+                </div>
+
+                <div class="achievement-card spotlight-card card-3d">
+                    <span class="achievement-icon">💻</span>
+                    <h3 class="achievement-title">Vibe Coding Session</h3>
+                    <span class="achievement-issuer">Rehber Program</span>
+                    <p class="achievement-desc">Participated in hands-on collaborative live coding workshops addressing modern engineering paradigms.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="content-section fade-in-up" id="contact">
+            <div class="section-header">
+                <span class="section-tag">// 06. INITIALIZE COMMS</span>
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-desc">Have a project, role, or collaboration in mind? Feel free to reach out directly.</p>
+            </div>
+
+            <div class="contact-container">
+                <!-- Contact Info Panel -->
+                <div class="contact-info-card spotlight-card card-3d">
+                    <h3 class="contact-info-title">Let's build something remarkable.</h3>
+                    <p class="contact-info-text">
+                        I am currently open to internship opportunities, full-time developer positions, and open-source contributions.
+                        Drop a message or connect through my socials!
+                    </p>
+
+                    <div class="contact-details-list">
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon">✉️</div>
+                            <div class="contact-detail-content">
+                                <span>Direct Email</span>
+                                <a href="mailto:sachin022AI0064@rdec.in">sachin022AI0064@rdec.in</a>
+                                <div>
+                                    <button class="copy-email-chip" id="copy-email-btn" data-cursor="COPY">
+                                        <span>📋 Copy Address</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon">🎓</div>
+                            <div class="contact-detail-content">
+                                <span>University &amp; Location</span>
+                                <p>AKTU, Lucknow / Uttar Pradesh, India</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon">🌐</div>
+                            <div class="contact-detail-content">
+                                <span>Online Footprint</span>
+                                <p>GitHub: <a href="https://github.com/sachin1399" target="_blank" style="color: var(--primary-cyan);">@sachin1399</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-socials">
+                        <a href="https://github.com/sachin1399" target="_blank" rel="noopener noreferrer" class="social-pill" title="GitHub" data-cursor="GITHUB">
+                            <img src="github.svg" alt="GitHub">
+                        </a>
+                        <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="social-pill" title="LinkedIn" data-cursor="LINKEDIN">
+                            <img src="linkedin.svg" alt="LinkedIn">
+                        </a>
+                        <a href="mailto:sachin022AI0064@rdec.in" class="social-pill" title="Email" data-cursor="MAIL">
+                            <img src="mail.svg" alt="Email">
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-card spotlight-card card-3d">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label class="form-label" for="sender-name">Name / Handle</label>
+                            <input type="text" id="sender-name" class="form-input" placeholder="e.g. Alex Morgan" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="sender-email">Email Address</label>
+                            <input type="email" id="sender-email" class="form-input" placeholder="e.g. alex@company.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="sender-message">Message / Mission</label>
+                            <textarea id="sender-message" class="form-textarea" placeholder="Hello Sachin, let's discuss an engineering opportunity..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;" data-cursor="SEND">
+                            <span>Dispatch Message</span>
+                            <span>🚀</span>
+                        </button>
+
+                        <div class="form-status" id="form-status">
+                            ✓ Message received! Thank you, I'll respond promptly.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Developer Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span style="color: var(--primary-cyan); font-weight: 700;">&lt;Sachin /&gt;</span> • Engineered with Three.js &amp; Pure Code
+                </div>
+                <div class="footer-copy">
+                    <span>Designed &amp; Developed with <span class="heart">♥</span> in 2026. All rights reserved.</span>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Project Output Inspection Modal -->
+        <div class="preview-modal" id="preview-modal">
+            <div class="modal-content-wrap">
+                <button class="modal-close-btn" id="modal-close-btn" aria-label="Close Preview" data-cursor="CLOSE">×</button>
+                <img id="modal-img" src="" alt="Project Output Preview Fullscreen">
+            </div>
         </div>
-    </section>
+    </div>
 
-    <section id="skills" class="fade-in-up">
-        <h2>Technical Skills</h2>
-        <div class="skills-list">
-            <div class="skill-card hover-float">Python</div>
-            <div class="skill-card hover-float">C</div>
-            <div class="skill-card hover-float">JavaScript</div>
-            <div class="skill-card hover-float">HTML & CSS</div>
-            <div class="skill-card hover-float">Node.js</div>
-            <div class="skill-card hover-float">DBMS</div>
-            <div class="skill-card hover-float">DSA</div>
-            <div class="skill-card hover-float">SDE</div>
-            <div class="skill-card hover-float">OS</div>
-            <div class="skill-card hover-float">DAA</div>
-            <div class="skill-card hover-float">Automata</div>
-            <div class="skill-card hover-float">CFA</div>
-            <div class="skill-card hover-float">AI</div>
-            <div class="skill-card hover-float">ML</div>
-            <div class="skill-card hover-float">MySQL</div>
-            <div class="skill-card hover-float">Power BI</div>
-            <div class="skill-card hover-float">VS Code</div>
-            <div class="skill-card hover-float">Visual Studio</div>
-        </div>
-        <h3>Core Skills</h3>
-        <div class="softskills-list">
-            <div class="skill-card hover-float">Analytical Thinking</div>
-            <div class="skill-card hover-float">Technical Proficiency</div>
-            <div class="skill-card hover-float">Problem Solving</div>
-        </div>
-    </section>
+    <!-- Three.js (Local offline library + CDN fallback) -->
+    <script src="three.min.js"></script>
+    <script>
+        if (typeof THREE === 'undefined') {
+            document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"><\/script>');
+        }
+    </script>
 
-    <section id="achievements" class="fade-in-up">
-        <h2>Achievements & Certificates</h2>
-        <ul class="ach-list">
-            <li>
-                <strong>Data Analytics and Forensic Technology – Deloitte</strong><br>   
-               Completed Deloitte Data Analytics Job Simulation, gaining exposure to data analysis and analytical problem solving.
-            </li><br>
-             <li>
-                <strong>AI Agent Hackathon</strong><br>   
-             Participated in an AI Agent Hackathon organized by Product Space, gaining hands-on exposure to AI-based problem solving.
-            </li><br>
-             <li>
-                <strong>Appreciation Certificate – Zyntiq Organization</strong><br>   
-             Awarded a Certificate of Appreciation by Zyntiq for consistent effort, commitment, and valuable contribution to the organization.
-            </li><br>
-            <li>
-                <strong>Coding Session Participation</strong><br>   
-           Participated in Rehber’s Vibe Coding Session, gaining practical exposure to coding concepts and problem-solving.
-            </li>
-        </ul>
-    </section>
-
-    <section id="contact" class="fade-in-up">
-        <h2>Contact Me</h2>
-        <form id="contactForm">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Message" rows="5" required></textarea>
-            <button type="submit" class="btn">Send</button>
-        </form>
-    </section>
-
-    <footer>
-        <span>&copy; 2025 Sachin. All rights reserved.</span>
-    </footer>
-
+    <!-- Main Logic & Interactive 3D / Cursor Engine -->
     <script src="script.js"></script>
 </body>
 
