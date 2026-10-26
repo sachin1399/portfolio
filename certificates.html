@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificates | Sachin - Verified Credential Registry</title>
+    <meta name="description" content="Verified Credentials of Sachin - Robotics & AI Trainer (3-Month), Elite NPTEL IIT Madras, CodSoft Internship, Deloitte, Adobe Hackathon, HackerRank certifications.">
+    <link rel="icon" type="image/svg+xml" href="github.svg">
+
+    <!-- Google Fonts for Developer Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Three.js Interactive 3D WebGL Canvas -->
+    <canvas id="webgl-canvas"></canvas>
+
+    <!-- Custom Laser & Ring Dual Cursor -->
+    <div id="custom-cursor-dot"></div>
+    <div id="custom-cursor-ring">
+        <span class="cursor-text">VIEW</span>
+    </div>
+    <canvas id="cursor-trail-canvas"></canvas>
+
+    <div class="page-wrapper">
+        <!-- Navigation Bar -->
+        <nav class="navbar" id="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="brand-logo" data-cursor="ROOT">
+                    <span class="code-bracket">&lt;</span>Sachin<span class="code-bracket">.dev /&gt;</span>
+                    <span class="terminal-cursor"></span>
+                </a>
+
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html" class="nav-link" data-cursor="HOME">home</a></li>
+                    <li><a href="about.html" class="nav-link" data-cursor="ABOUT">about</a></li>
+                    <li><a href="projects.html" class="nav-link" data-cursor="WORK">projects</a></li>
+                    <li><a href="certificates.html" class="nav-link active" data-cursor="CERTS">certificates</a></li>
+                    <li><a href="terminal.html" class="nav-link" data-cursor="CLI">terminal</a></li>
+                    <li><a href="contact.html" class="nav-link" data-cursor="PING">contact</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <button class="icon-btn" id="sound-toggle" title="Toggle Tech Audio FX" aria-label="Toggle Audio" data-cursor="AUDIO">
+                        <span id="sound-icon">🔇</span>
+                    </button>
+                    <button class="icon-btn" id="theme-toggle" title="Toggle Theme" aria-label="Toggle Theme" data-cursor="THEME">
+                        <span id="theme-icon">🌙</span>
+                    </button>
+                    <button class="icon-btn mobile-menu-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+                        ☰
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Page Hero Header -->
+        <header class="page-hero-header fade-in-up">
+            <span class="section-tag">// 03. CREDENTIAL REGISTRY &amp; VERIFICATIONS</span>
+            <h1 class="section-title">Certifications &amp; <span style="color: var(--primary-cyan);">Credentials</span></h1>
+            <p class="section-desc">Tiered verification registry categorized by institutional rigor, national premier accreditations, industry internships, and coding hackathons.</p>
+        </header>
+
+        <!-- Certifications Registry Content -->
+        <section class="content-section fade-in-up" id="certificates">
+            <!-- Category Filter Tabs -->
+            <div class="cert-filters">
+                <button class="cert-filter-btn active" data-cert-filter="all" data-cursor="FILTER">All Credentials (10)</button>
+                <button class="cert-filter-btn" data-cert-filter="tier-1" data-cursor="FILTER">★ Level 1: Elite &amp; Premier (2)</button>
+                <button class="cert-filter-btn" data-cert-filter="tier-2" data-cursor="FILTER">◆ Level 2: Internships &amp; Corporate (2)</button>
+                <button class="cert-filter-btn" data-cert-filter="tier-3" data-cursor="FILTER">▲ Level 3: Hackathons &amp; Coding (4)</button>
+                <button class="cert-filter-btn" data-cert-filter="tier-4" data-cursor="FILTER">● Level 4: BI &amp; Data Masterclasses (2)</button>
+            </div>
+
+            <!-- LEVEL 1: PREMIER & ELITE NATIONAL CERTIFICATIONS -->
+            <div class="cert-level-block" data-tier="tier-1">
+                <div class="level-header-bar tier-1">
+                    <div class="level-title-group">
+                        <span class="level-icon">★</span>
+                        <div>
+                            <h3 class="level-title">Level 1: Premier &amp; Elite National Certifications</h3>
+                            <span class="level-subtitle">High-Rigor Multi-Month Programs &amp; Govt. of India / IIT Accredited Credentials</span>
+                        </div>
+                    </div>
+                    <span class="level-count-badge">2 Credentials</span>
+                </div>
+
+                <div class="tier1-showcase-grid">
+                    <!-- Cert 1: Robotics & AI Innovation Engineer -->
+                    <div class="featured-cert-card spotlight-card card-3d">
+                        <div class="cert-preview-wrapper" data-modal="certificate-robotics-ai.png" data-cursor="ZOOM" title="Click to inspect full certificate">
+                            <img src="certificate-robotics-ai.png" alt="Robotics & AI Innovation Engineer Certificate - Sachin" class="cert-preview-img">
+                            <div class="cert-preview-overlay">
+                                <span class="cert-preview-btn">🔍 View Full Certificate</span>
+                            </div>
+                        </div>
+
+                        <div class="cert-info-content">
+                            <div class="cert-badge-tag">
+                                <span>★</span> LEVEL 1: PREMIER STEAM TRAINER (3 MONTHS)
+                            </div>
+                            <h3 class="cert-main-title">Robotics &amp; AI Innovation Engineer</h3>
+                            <div class="cert-issuer-row">
+                                The Smart Minds AI Lab • A Unit of Roboveritas AI Solutions
+                            </div>
+                            <div class="cert-period-badge">
+                                🗓️ June 2026 – September 2026 • Ashish Gupta (Academic Director)
+                            </div>
+                            <p class="cert-body-desc">
+                                Completed the intensive 3-month <strong>Robotics &amp; AI Trainer Program</strong>, demonstrating practical engineering competencies in autonomous robotics, artificial intelligence modeling, electronics, and project-based STEM innovation.
+                            </p>
+                            <div class="cert-actions-row">
+                                <button class="btn btn-primary inspect-output-btn" data-modal="certificate-robotics-ai.png" data-cursor="ZOOM" style="padding: 0.6rem 1.25rem; font-size: 0.82rem;">
+                                    <span>Inspect Credential</span>
+                                    <span>🔍</span>
+                                </button>
+                                <a href="Robotics_AI_Certificate.pdf" download="Sachin_Robotics_AI_Certificate.pdf" class="btn btn-secondary" data-cursor="GET PDF" style="padding: 0.6rem 1.25rem; font-size: 0.82rem;">
+                                    <span>Download PDF</span>
+                                    <span>📄</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cert 2: NPTEL Elite Online Certification -->
+                    <div class="featured-cert-card spotlight-card card-3d">
+                        <div class="cert-preview-wrapper" data-modal="certificate-nptel-python.png" data-cursor="ZOOM" title="Click to inspect NPTEL certificate">
+                            <img src="certificate-nptel-python.png" alt="NPTEL Python for Data Science Elite Certificate - Sachin" class="cert-preview-img">
+                            <div class="cert-preview-overlay">
+                                <span class="cert-preview-btn">🔍 View Full Certificate</span>
+                            </div>
+                        </div>
+
+                        <div class="cert-info-content">
+                            <div class="cert-badge-tag">
+                                <span>★</span> LEVEL 1: ELITE NATIONAL (IIT MADRAS / MoE)
+                            </div>
+                            <h3 class="cert-main-title">Python for Data Science (Elite Certification)</h3>
+                            <div class="cert-issuer-row">
+                                NPTEL • Indian Institute of Technology Madras (MoE, Govt. of India)
+                            </div>
+                            <div class="cert-period-badge">
+                                🗓️ Jan-Feb 2026 (4-Week Course) • Roll: NPTEL26CS80S456000303
+                            </div>
+                            <p class="cert-body-desc">
+                                Awarded prestigious <strong>Elite status</strong> by IIT Madras with a consolidated score of <strong>66%</strong> (Assignments: 22.58/25, Proctored Exam: 43.5/75). Recommended for 2 university academic credits under the Swayam &amp; Skill India initiatives.
+                            </p>
+                            <div class="cert-actions-row">
+                                <button class="btn btn-primary inspect-output-btn" data-modal="certificate-nptel-python.png" data-cursor="ZOOM" style="padding: 0.6rem 1.25rem; font-size: 0.82rem;">
+                                    <span>Inspect Credential</span>
+                                    <span>🔍</span>
+                                </button>
+                                <a href="NPTEL_Python_Data_Science_Certificate.pdf" download="Sachin_NPTEL_Python_Data_Science.pdf" class="btn btn-secondary" data-cursor="GET PDF" style="padding: 0.6rem 1.25rem; font-size: 0.82rem;">
+                                    <span>Download PDF</span>
+                                    <span>📄</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LEVEL 2: INDUSTRY INTERNSHIPS & CORPORATE SIMULATIONS -->
+            <div class="cert-level-block" data-tier="tier-2">
+                <div class="level-header-bar tier-2">
+                    <div class="level-title-group">
+                        <span class="level-icon">◆</span>
+                        <div>
+                            <h3 class="level-title">Level 2: Industry Internships &amp; Corporate Simulations</h3>
+                            <span class="level-subtitle">Structured Software Engineering Delivery &amp; Enterprise Forensic Analytics</span>
+                        </div>
+                    </div>
+                    <span class="level-count-badge">2 Credentials</span>
+                </div>
+
+                <div class="cert-grid-columns">
+                    <!-- Cert 3: CodSoft Python Internship -->
+                    <div class="cert-card spotlight-card card-3d">
+                        <div class="cert-card-img-wrap" data-modal="certificate-codsoft-internship.png" data-cursor="ZOOM" title="Click to inspect CodSoft certificate">
+                            <img src="certificate-codsoft-internship.png" alt="CodSoft Python Programming Internship - Sachin" class="cert-card-img">
+                            <div class="cert-card-overlay">
+                                <span class="cert-zoom-btn">🔍 View</span>
+                            </div>
+                        </div>
+                        <span class="cert-card-badge badge-cyan">◆ LEVEL 2: INDUSTRY INTERNSHIP</span>
+                        <h4 class="cert-card-title">Python Programming Virtual Internship</h4>
+                        <span class="cert-card-org">CodSoft • ISO 9001:2015 &amp; MSME Registered</span>
+                        <div class="cert-meta-tags">
+                            <span class="cert-tag">🗓️ 15 Jul – 15 Aug 2025</span>
+                            <span class="cert-tag">C.ID: 4169d07</span>
+                            <span class="cert-tag">4 Weeks</span>
+                        </div>
+                        <p class="cert-card-desc">
+                            Completed a structured 4-week software internship authoring modular Python algorithms, data structures, and automation scripts adhering to clean-code standards.
+                        </p>
+                        <div class="cert-card-actions">
+                            <button class="btn btn-primary inspect-output-btn" data-modal="certificate-codsoft-internship.png" data-cursor="ZOOM">
+                                <span>Inspect</span> 🔍
+                            </button>
+                            <a href="CodSoft_Python_Internship_Certificate.pdf" download="Sachin_CodSoft_Python_Internship.pdf" class="btn btn-secondary" data-cursor="GET PDF">
+                                <span>PDF</span> 📄
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Cert 4: Deloitte Data Analytics Simulation -->
+                    <div class="cert-card spotlight-card card-3d">
+                        <div class="cert-card-img-wrap" data-modal="certificate-deloitte-analytics.png" data-cursor="ZOOM" title="Click to inspect Deloitte certificate">
+                            <img src="certificate-deloitte-analytics.png" alt="Deloitte Data Analytics Simulation - Sachin" class="cert-card-img">
+                            <div class="cert-card-overlay">
+                                <span class="cert-zoom-btn">🔍 View</span>
+                            </div>
+                        </div>
+                        <span class="cert-card-badge badge-cyan">◆ LEVEL 2: CORPORATE SIMULATION</span>
+                        <h4 class="cert-card-title">Data Analytics Job Simulation</h4>
+                        <span class="cert-card-org">Deloitte • Issued by Forage</span>
+                        <div class="cert-meta-tags">
+                            <span class="cert-tag">🗓️ June 24th, 2025</span>
+                            <span class="cert-tag">Code: FCbYJoSbr2McAJ4hs</span>
+                            <span class="cert-tag">Forensic Tech</span>
+                        </div>
+                        <p class="cert-card-desc">
+                            Completed practical corporate simulations under Chief HR Officer Tina McCreery, conducting forensic technology tasks, anomaly investigations, and business data analytics.
+                        </p>
+                        <div class="cert-card-actions">
+                            <button class="btn btn-primary inspect-output-btn" data-modal="certificate-deloitte-analytics.png" data-cursor="ZOOM">
+                                <span>Inspect</span> 🔍
+                            </button>
+                            <a href="Deloitte_Data_Analytics_Certificate.pdf" download="Sachin_Deloitte_Data_Analytics.pdf" class="btn btn-secondary" data-cursor="GET PDF">
+                                <span>PDF</span> 📄
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LEVEL 3: NATIONAL HACKATHONS & CODING ASSESSMENTS -->
+            <div class="cert-level-block" data-tier="tier-3">
+                <div class="level-header-bar tier-3">
+                    <div class="level-title-group">
+                        <span class="level-icon">▲</span>
+                        <div>
+                            <h3 class="level-title">Level 3: National Hackathons &amp; Coding Assessments</h3>
+                            <span class="level-subtitle">Competitive Programming, Autonomous AI Agents &amp; Standardized Skill Tests</span>
+                        </div>
+                    </div>
+                    <span class="level-count-badge">4 Credentials</span>
+                </div>
+
+                <div class="cert-grid-columns">
+                    <!-- Cert 5: Adobe India Hackathon -->
+                    <div class="cert-card spotlight-card card-3d">
+                        <div class="cert-card-img-wrap" data-modal="certificate-adobe-hackathon.png" data-cursor="ZOOM" title="Click to inspect Adobe Hackathon certificate">
+                            <img src="certificate-adobe-hackathon.png" alt="Adobe India Hackathon - Sachin" class="cert-card-img">
+                            <div class="cert-card-overlay">
+                                <span class="cert-zoom-btn">🔍 View</span>
+                            </div>
+                        </div>
+                        <span class="cert-card-badge badge-purple">▲ LEVEL 3: NATIONAL HACKATHON</span>
+                        <h4 class="cert-card-title">Adobe India Hackathon</h4>
+                        <span class="cert-card-org">Adobe &amp; Unstop • Team Hustle Coder</span>
+                        <div class="cert-meta-tags">
+                            <span class="cert-tag">Round 1 Qualifier</span>
+                            <span class="cert-tag">Online MCQ + Coding</span>
+                            <span class="cert-tag">R.D. Engineering College</span>
+                        </div>
+                        <p class="cert-card-desc">
+                            Participated as Team Hustle Coder in the prestigious Adobe India Hackathon, tackling algorithmic assessments and complex coding challenges organized by Adobe.
+                        </p>
+                        <div class="cert-card-actions">
+                            <button class="btn btn-primary inspect-output-btn" data-modal="certificate-adobe-hackathon.png" data-cursor="ZOOM">
+                                <span>Inspect</span> 🔍
+                            </button>
+                            <a href="Adobe_Hackathon_Certificate.pdf" download="Sachin_Adobe_Hackathon_Certificate.pdf" class="btn btn-secondary" data-cursor="GET PDF">
+                                <span>PDF</span> 📄
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Cert 6: AI Agent Hackathon -->
+                    <div class="cert-card spotlight-card card-3d">
+                        <div class="cert-card-img-wrap" data-modal="certificate-ai-agent-hackathon.png" data-cursor="ZOOM" title="Click to inspect AI Agent Hackathon certificate">
+                            <img src="certificate-ai-agent-hackathon.png" alt="AI Agent Hackathon - Sachin" class="cert-card-img">
+                            <div class="cert-card-overlay">
+                                <span class="cert-zoom-btn">🔍 View</span>
+                            </div>
+                        </div>
+                        <span class="cert-card-badge badge-purple">▲ LEVEL 3: AI HACKATHON</span>
+                        <h4 class="cert-card-title">AI Agent Hackathon</h4>
+                        <span class="cert-card-org">Product Space &amp; Unstop</span>
+                        <div class="cert-meta-tags">
+                            <span class="cert-tag">Autonomous Agents</span>
+                            <span class="cert-tag">LLM Workflows</span>
+                            <span class="cert-tag">R.D. Engineering College</span>
+                        </div>
+                        <p class="cert-card-desc">
+                            Competed in an intensive nationwide hackathon architecting autonomous AI agent workflows, prompt automation pipelines, and generative problem-solving.
+                        </p>
+                        <div class="cert-card-actions">
+                            <button class="btn btn-primary inspect-output-btn" data-modal="certificate-ai-agent-hackathon.png" data-cursor="ZOOM">
+                                <span>Inspect</span> 🔍
+                            </button>
+                            <a href="AI_Agent_Hackathon_Certificate.pdf" download="Sachin_AI_Agent_Hackathon_Certificate.pdf" class="btn btn-secondary" data-cursor="GET PDF">
+                                <span>PDF</span> 📄
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Cert 7: HackerRank Python (Basic) -->
+                    <div class="cert-card spotlight-card card-3d">
+                        <div class="cert-card-img-wrap" data-modal="certificate-hackerrank-python.png" data-cursor="ZOOM" title="Click to inspect HackerRank Python certificate">
+                            <img src="certificate-hackerrank-python.png" alt="HackerRank Python Certification - Sachin" class="cert-card-img">
+                            <div class="cert-card-overlay">
+                                <span class="cert-zoom-btn">🔍 View</span>
+                            </div>
+                        </div>
+                        <span class="cert-card-badge badge-purple">▲ LEVEL 3: SKILL CERTIFICATION</span>
+                        <h4 class="cert-card-title">Python (Basic) Certification</h4>
+                        <span class="cert-card-org">HackerRank • CTO Harishankaran K</span>
+                        <div class="cert-meta-tags">
+                            <span class="cert-tag">🗓️ Earned: 16 Apr, 2025</span>
+                            <span class="cert-tag">ID: 5D1AC2FA43A3</span>
+                            <span class="cert-tag">Proctored Assessment</span>
+                        </div>
+                        <p class="cert-card-desc">
+                            Passed the rigorous HackerRank skill certification test verifying hands-on proficiency in Python syntax, object-oriented concepts, and algorithmic problem solving.
+                        </p>
+                        <div class="cert-card-actions">
+                            <button class="btn btn-primary inspect-output-btn" data-modal="certificate-hackerrank-python.png" data-cursor="ZOOM">
+                                <span>Inspect</span> 🔍
+                            </button>
+                            <a href="HackerRank_Python_Certificate.pdf" download="Sachin_HackerRank_Python.pdf" class="btn btn-secondary" data-cursor="GET PDF">
+                                <span>PDF</span> 📄
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Cert 8: HackerRank SQL (Basic) -->
+                    <div class="cert-card spotlight-card card-3d">
+                        <div class="cert-card-img-wrap" data-modal="certificate-hackerrank-sql.png" data-cursor="ZOOM" title="Click to inspect HackerRank SQL certificate">
+                            <img src="certificate-hackerrank-sql.png" alt="HackerRank SQL Certification - Sachin" class="cert-card-img">
+                            <div class="cert-card-overlay">
+                                <span class="cert-zoom-btn">🔍 View</span>
+                            </div>
+                        </div>
+                        <span class="cert-card-badge badge-purple">▲ LEVEL 3: SKILL CERTIFICATION</span>
+                        <h4 class="cert-card-title">SQL (Basic) Certification</h4>
+                        <span class="cert-card-org">HackerRank • CTO Harishankaran K</span>
+                        <div class="cert-meta-tags">
+                            <span class="cert-tag">🗓️ Earned: 16 Apr, 2025</span>
+                            <span class="cert-tag">ID: 5F66B61ECA14</span>
+                            <span class="cert-tag">Relational Queries</span>
+                        </div>
+                        <p class="cert-card-desc">
+                            Demonstrated verified competency in relational database querying, joins, aggregation functions, filtering, and data manipulation under strict proctored test conditions.
+                        </p>
+                        <div class="cert-card-actions">
+                            <button class="btn btn-primary inspect-output-btn" data-modal="certificate-hackerrank-sql.png" data-cursor="ZOOM">
+                                <span>Inspect</span> 🔍
+                            </button>
+                            <a href="HackerRank_SQL_Certificate.pdf" download="Sachin_HackerRank_SQL.pdf" class="btn btn-secondary" data-cursor="GET PDF">
+                                <span>PDF</span> 📄
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LEVEL 4: BUSINESS INTELLIGENCE & DATA MASTERCLASSES -->
+            <div class="cert-level-block" data-tier="tier-4">
+                <div class="level-header-bar tier-4">
+                    <div class="level-title-group">
+                        <span class="level-icon">●</span>
+                        <div>
+                            <h3 class="level-title">Level 4: Business Intelligence &amp; Data Masterclasses</h3>
+                            <span class="level-subtitle">Advanced DAX Modeling, Power BI Architecture &amp; Executive Reporting</span>
+                        </div>
+                    </div>
+                    <span class="level-count-badge">2 Credentials</span>
+                </div>
+
+                <div class="cert-grid-columns">
+                    <!-- Cert 9: OfficeMaster Power BI Workshop -->
+                    <div class="cert-card spotlight-card card-3d">
+                        <div class="cert-card-img-wrap" data-modal="certificate-officemaster-powerbi.png" data-cursor="ZOOM" title="Click to inspect OfficeMaster certificate">
+                            <img src="certificate-officemaster-powerbi.png" alt="OfficeMaster Power BI Workshop - Sachin" class="cert-card-img">
+                            <div class="cert-card-overlay">
+                                <span class="cert-zoom-btn">🔍 View</span>
+                            </div>
+                        </div>
+                        <span class="cert-card-badge badge-blue">● LEVEL 4: BI WORKSHOP</span>
+                        <h4 class="cert-card-title">Power BI Workshop: AI-Powered Dashboards</h4>
+                        <span class="cert-card-org">OfficeMaster • Aditya Goenka &amp; Aditya Kachave</span>
+                        <div class="cert-meta-tags">
+                            <span class="cert-tag">🗓️ Issued: Feb 23rd, 2025</span>
+                            <span class="cert-tag">AI Dashboards</span>
+                            <span class="cert-tag">Rapid Prototyping</span>
+                        </div>
+                        <p class="cert-card-desc">
+                            Demonstrated certified capability in designing and implementing AI-powered interactive business intelligence dashboards in Power BI within under 30 minutes.
+                        </p>
+                        <div class="cert-card-actions">
+                            <button class="btn btn-primary inspect-output-btn" data-modal="certificate-officemaster-powerbi.png" data-cursor="ZOOM">
+                                <span>Inspect</span> 🔍
+                            </button>
+                            <a href="OfficeMaster_PowerBI_Certificate.pdf" download="Sachin_OfficeMaster_PowerBI.pdf" class="btn btn-secondary" data-cursor="GET PDF">
+                                <span>PDF</span> 📄
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Cert 10: WsCube Tech Power BI Masterclass -->
+                    <div class="cert-card spotlight-card card-3d">
+                        <div class="cert-card-img-wrap" data-modal="certificate-wscubetech-powerbi.png" data-cursor="ZOOM" title="Click to inspect WsCube Tech certificate">
+                            <img src="certificate-wscubetech-powerbi.png" alt="WsCube Tech Power BI Masterclass - Sachin" class="cert-card-img">
+                            <div class="cert-card-overlay">
+                                <span class="cert-zoom-btn">🔍 View</span>
+                            </div>
+                        </div>
+                        <span class="cert-card-badge badge-blue">● LEVEL 4: DATA MASTERCLASS</span>
+                        <h4 class="cert-card-title">Power BI Dashboard For Data Analytics</h4>
+                        <span class="cert-card-org">WsCube Tech • Founder Kushagra Bhatia</span>
+                        <div class="cert-meta-tags">
+                            <span class="cert-tag">🗓️ Issued: 23rd Aug 2025</span>
+                            <span class="cert-tag">Reg ID: WS/2025/M/11746</span>
+                            <span class="cert-tag">Data Modeling</span>
+                        </div>
+                        <p class="cert-card-desc">
+                            Participated in an intensive hands-on analytics masterclass mastering dimensional data models, interactive slicers, KPI calculation trees, and visual reporting.
+                        </p>
+                        <div class="cert-card-actions">
+                            <button class="btn btn-primary inspect-output-btn" data-modal="certificate-wscubetech-powerbi.png" data-cursor="ZOOM">
+                                <span>Inspect</span> 🔍
+                            </button>
+                            <a href="WsCubeTech_PowerBI_Certificate.pdf" download="Sachin_WsCubeTech_PowerBI.pdf" class="btn btn-secondary" data-cursor="GET PDF">
+                                <span>PDF</span> 📄
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ADDITIONAL INSTITUTIONAL RECOGNITIONS -->
+            <div class="level-header-bar" style="margin-top: 2rem;">
+                <div class="level-title-group">
+                    <span class="level-icon">🎖️</span>
+                    <div>
+                        <h3 class="level-title">Additional Institutional Honors &amp; Recognitions</h3>
+                        <span class="level-subtitle">Organizational Appreciation &amp; Collaborative Engineering Workshops</span>
+                    </div>
+                </div>
+                <span class="level-count-badge">2 Honors</span>
+            </div>
+
+            <div class="achievements-grid">
+                <div class="achievement-card spotlight-card card-3d">
+                    <span class="achievement-icon">🎖️</span>
+                    <h3 class="achievement-title">Certificate of Appreciation</h3>
+                    <span class="achievement-issuer">Zyntiq Organization</span>
+                    <p class="achievement-desc">Awarded for consistent effort, valuable contributions, and outstanding commitment to team technical objectives.</p>
+                </div>
+
+                <div class="achievement-card spotlight-card card-3d">
+                    <span class="achievement-icon">💻</span>
+                    <h3 class="achievement-title">Vibe Coding Session</h3>
+                    <span class="achievement-issuer">Rehber Program</span>
+                    <p class="achievement-desc">Participated in hands-on collaborative live coding workshops addressing modern engineering paradigms.</p>
+                </div>
+            </div>
+
+            <!-- Page Navigation CTA -->
+            <div class="section-cta-wrap">
+                <a href="projects.html" class="btn btn-primary" data-cursor="PROJECTS" style="margin-right: 1rem;">
+                    <span>Explore Projects</span> 🚀
+                </a>
+                <a href="contact.html" class="btn btn-secondary" data-cursor="CONTACT">
+                    <span>Contact Sachin</span> ✉️
+                </a>
+            </div>
+        </section>
+
+        <!-- Certificate Fullscreen Lightbox Modal -->
+        <div class="preview-modal" id="preview-modal">
+            <div class="modal-content-wrap">
+                <button class="modal-close-btn" id="modal-close-btn" aria-label="Close Preview" data-cursor="CLOSE">×</button>
+                <img id="modal-img" src="" alt="Certificate Preview Fullscreen">
+            </div>
+        </div>
+
+        <!-- Developer Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span style="color: var(--primary-cyan); font-weight: 700;">&lt;Sachin /&gt;</span> • Engineered with Three.js &amp; Pure Code
+                </div>
+                <div class="footer-copy">
+                    <span>Designed &amp; Developed with <span class="heart">♥</span> in 2026. All rights reserved.</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Three.js + Main Script -->
+    <script src="three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

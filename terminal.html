@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal | Sachin - Interactive Developer CLI Workbench</title>
+    <meta name="description" content="Interactive UNIX Terminal Shell (SachinOS) - Query developer skills, run portfolio commands, and inspect Python configurations.">
+    <link rel="icon" type="image/svg+xml" href="github.svg">
+
+    <!-- Google Fonts for Developer Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Three.js Interactive 3D WebGL Canvas -->
+    <canvas id="webgl-canvas"></canvas>
+
+    <!-- Custom Laser & Ring Dual Cursor -->
+    <div id="custom-cursor-dot"></div>
+    <div id="custom-cursor-ring">
+        <span class="cursor-text">CLI</span>
+    </div>
+    <canvas id="cursor-trail-canvas"></canvas>
+
+    <div class="page-wrapper">
+        <!-- Navigation Bar -->
+        <nav class="navbar" id="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="brand-logo" data-cursor="ROOT">
+                    <span class="code-bracket">&lt;</span>Sachin<span class="code-bracket">.dev /&gt;</span>
+                    <span class="terminal-cursor"></span>
+                </a>
+
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html" class="nav-link" data-cursor="HOME">home</a></li>
+                    <li><a href="about.html" class="nav-link" data-cursor="ABOUT">about</a></li>
+                    <li><a href="projects.html" class="nav-link" data-cursor="WORK">projects</a></li>
+                    <li><a href="certificates.html" class="nav-link" data-cursor="CERTS">certificates</a></li>
+                    <li><a href="terminal.html" class="nav-link active" data-cursor="CLI">terminal</a></li>
+                    <li><a href="contact.html" class="nav-link" data-cursor="PING">contact</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <button class="icon-btn" id="sound-toggle" title="Toggle Tech Audio FX" aria-label="Toggle Audio" data-cursor="AUDIO">
+                        <span id="sound-icon">🔇</span>
+                    </button>
+                    <button class="icon-btn" id="theme-toggle" title="Toggle Theme" aria-label="Toggle Theme" data-cursor="THEME">
+                        <span id="theme-icon">🌙</span>
+                    </button>
+                    <button class="icon-btn mobile-menu-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+                        ☰
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Page Hero Header -->
+        <header class="page-hero-header fade-in-up">
+            <span class="section-tag">// 04. INTERACTIVE DEVELOPER SHELL</span>
+            <h1 class="section-title">SachinOS <span style="color: var(--primary-cyan);">Terminal</span></h1>
+            <p class="section-desc">Full-featured UNIX shell environment to query system parameters, review certified credentials, and inspect Python configuration code.</p>
+        </header>
+
+        <!-- Terminal & Code Window Section -->
+        <section class="content-section fade-in-up" id="terminal-section">
+            <div class="terminal-window-wrapper">
+                <div class="mac-window spotlight-card card-3d">
+                    <div class="window-chrome">
+                        <div class="window-dots">
+                            <span class="window-dot red" title="Close"></span>
+                            <span class="window-dot yellow" title="Minimize"></span>
+                            <span class="window-dot green" title="Maximize"></span>
+                        </div>
+                        <div class="window-tabs">
+                            <button class="window-tab active" id="tab-terminal-btn" data-cursor="TAB">bash ~ sachin-os</button>
+                            <button class="window-tab" id="tab-code-btn" data-cursor="TAB">developer.py</button>
+                        </div>
+                        <span class="window-title">zsh • 80x24 (interactive)</span>
+                    </div>
+
+                    <!-- Terminal View -->
+                    <div class="terminal-content" id="terminal-view" style="min-height: 420px; max-height: 540px;">
+                        <div class="terminal-history" id="terminal-history">
+                            <div class="terminal-line">
+                                <span class="terminal-prompt-label">sachin@dev-box:~$</span>
+                                <span>neofetch --portfolio</span>
+                            </div>
+                            <div class="terminal-output info">
+                                ╔═══════════════════════════════════════════════════════════╗<br>
+                                ║ &nbsp;SACHIN.DEV OS v2.4 (x86_64 Full-Stack Architecture)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;║<br>
+                                ║ &nbsp;Role:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Full-Stack Python &amp; Django Developer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;║<br>
+                                ║ &nbsp;Degree:&nbsp;&nbsp;&nbsp;&nbsp;B.Tech CSE (2022 - 2026, AKTU Lucknow)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;║<br>
+                                ║ &nbsp;Cert Tiers:★ Tier 1 (Robotics &amp; AI + NPTEL Elite)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;║<br>
+                                ║ &nbsp;Status:&nbsp;&nbsp;&nbsp;&nbsp;🟢 Available for Internships / SDE Roles&nbsp;&nbsp;&nbsp;&nbsp;║<br>
+                                ╚═══════════════════════════════════════════════════════════╝<br>
+                                Type <strong style="color: var(--primary-cyan);">help</strong> to see all available commands, or click the quick command chips below!
+                            </div>
+                        </div>
+
+                        <div class="terminal-input-row">
+                            <span class="terminal-prompt-label">sachin@dev-box:~$</span>
+                            <input type="text" id="terminal-input" class="terminal-input" placeholder="type 'help', 'skills', 'projects', 'certs', 'sudo hire'..." autocomplete="off" spellcheck="false" autofocus>
+                        </div>
+                    </div>
+
+                    <!-- Code Snippet View -->
+                    <div class="code-tab-content" id="code-view" style="min-height: 420px;">
+                        <div class="code-header-action">
+                            <button class="copy-code-btn" id="copy-code-btn" data-cursor="COPY">📋 Copy Code</button>
+                        </div>
+                        <pre class="code-syntax"><code><span class="code-comment"># Developer Profile Configuration: developer.py</span>
+<span class="code-keyword">from</span> dataclasses <span class="code-keyword">import</span> dataclass, field
+<span class="code-keyword">from</span> typing <span class="code-keyword">import</span> List, Dict
+
+<span class="code-keyword">@dataclass</span>
+<span class="code-keyword">class</span> <span class="code-class">SoftwareEngineer</span>:
+    name: <span class="code-class">str</span> = <span class="code-str">"Sachin"</span>
+    role: <span class="code-class">str</span> = <span class="code-str">"Full-Stack Python &amp; AI Developer"</span>
+    education: <span class="code-class">str</span> = <span class="code-str">"B.Tech in Computer Science &amp; Engineering (AKTU, 2022-2026)"</span>
+    
+    premier_certifications: List[<span class="code-class">str</span>] = field(default_factory=<span class="code-keyword">lambda</span>: [
+        <span class="code-str">"Robotics &amp; AI Innovation Engineer (3-Month STEAM Trainer)"</span>,
+        <span class="code-str">"Python for Data Science - Elite (NPTEL / IIT Madras)"</span>
+    ])
+    
+    core_stack: List[<span class="code-class">str</span>] = field(default_factory=<span class="code-keyword">lambda</span>: [
+        <span class="code-str">"Python"</span>, <span class="code-str">"Django"</span>, <span class="code-str">"ReactJS"</span>, <span class="code-str">"JavaScript ES6+"</span>, <span class="code-str">"Node.js"</span>, <span class="code-str">"MySQL"</span>, <span class="code-str">"Power BI"</span>
+    ])
+    
+    interests: List[<span class="code-class">str</span>] = field(default_factory=<span class="code-keyword">lambda</span>: [
+        <span class="code-str">"Autonomous AI Agents"</span>, <span class="code-str">"Distributed Systems"</span>, <span class="code-str">"Three.js 3D WebGL"</span>
+    ])
+
+    <span class="code-keyword">def</span> <span class="code-func">solve_problem</span>(self, challenge: <span class="code-class">str</span>) -&gt; <span class="code-class">str</span>:
+        <span class="code-comment"># Transform complex challenges into elegant, resilient code</span>
+        <span class="code-keyword">return</span> f<span class="code-str">"Engineered robust solution for: {challenge} with 100% test coverage"</span>
+
+<span class="code-comment"># Instantiate developer runtime</span>
+developer = <span class="code-class">SoftwareEngineer</span>()
+<span class="code-func">print</span>(developer.solve_problem(<span class="code-str">"Scalable Web Architecture &amp; AI Agents"</span>))
+</code></pre>
+                    </div>
+
+                    <!-- Quick Command Chips -->
+                    <div class="terminal-quick-chips">
+                        <span class="quick-chip-label">Quick Commands:</span>
+                        <button class="command-chip" data-cmd="help" data-cursor="RUN">help</button>
+                        <button class="command-chip" data-cmd="skills" data-cursor="RUN">skills</button>
+                        <button class="command-chip" data-cmd="projects" data-cursor="RUN">projects</button>
+                        <button class="command-chip" data-cmd="certs" data-cursor="RUN">certs</button>
+                        <button class="command-chip" data-cmd="experience" data-cursor="RUN">experience</button>
+                        <button class="command-chip" data-cmd="about" data-cursor="RUN">about</button>
+                        <button class="command-chip" data-cmd="sudo hire" data-cursor="RUN">sudo hire</button>
+                        <button class="command-chip" data-cmd="clear" data-cursor="RUN">clear</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page Navigation CTA -->
+            <div class="section-cta-wrap">
+                <a href="certificates.html" class="btn btn-primary" data-cursor="CERTS" style="margin-right: 1rem;">
+                    <span>View Certificates Registry</span> 🏆
+                </a>
+                <a href="contact.html" class="btn btn-secondary" data-cursor="CONTACT">
+                    <span>Dispatch a Message</span> ✉️
+                </a>
+            </div>
+        </section>
+
+        <!-- Developer Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span style="color: var(--primary-cyan); font-weight: 700;">&lt;Sachin /&gt;</span> • Engineered with Three.js &amp; Pure Code
+                </div>
+                <div class="footer-copy">
+                    <span>Designed &amp; Developed with <span class="heart">♥</span> in 2026. All rights reserved.</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Three.js + Main Script -->
+    <script src="three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

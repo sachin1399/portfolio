@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Sachin - Software Engineer Comms</title>
+    <meta name="description" content="Get in Touch with Sachin - Full-Stack Developer, AI Engineer, and AKTU Computer Science undergraduate.">
+    <link rel="icon" type="image/svg+xml" href="github.svg">
+
+    <!-- Google Fonts for Developer Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Three.js Interactive 3D WebGL Canvas -->
+    <canvas id="webgl-canvas"></canvas>
+
+    <!-- Custom Laser & Ring Dual Cursor -->
+    <div id="custom-cursor-dot"></div>
+    <div id="custom-cursor-ring">
+        <span class="cursor-text">PING</span>
+    </div>
+    <canvas id="cursor-trail-canvas"></canvas>
+
+    <div class="page-wrapper">
+        <!-- Navigation Bar -->
+        <nav class="navbar" id="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="brand-logo" data-cursor="ROOT">
+                    <span class="code-bracket">&lt;</span>Sachin<span class="code-bracket">.dev /&gt;</span>
+                    <span class="terminal-cursor"></span>
+                </a>
+
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html" class="nav-link" data-cursor="HOME">home</a></li>
+                    <li><a href="about.html" class="nav-link" data-cursor="ABOUT">about</a></li>
+                    <li><a href="projects.html" class="nav-link" data-cursor="WORK">projects</a></li>
+                    <li><a href="certificates.html" class="nav-link" data-cursor="CERTS">certificates</a></li>
+                    <li><a href="terminal.html" class="nav-link" data-cursor="CLI">terminal</a></li>
+                    <li><a href="contact.html" class="nav-link active" data-cursor="PING">contact</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <button class="icon-btn" id="sound-toggle" title="Toggle Tech Audio FX" aria-label="Toggle Audio" data-cursor="AUDIO">
+                        <span id="sound-icon">🔇</span>
+                    </button>
+                    <button class="icon-btn" id="theme-toggle" title="Toggle Theme" aria-label="Toggle Theme" data-cursor="THEME">
+                        <span id="theme-icon">🌙</span>
+                    </button>
+                    <button class="icon-btn mobile-menu-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+                        ☰
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Page Hero Header -->
+        <header class="page-hero-header fade-in-up">
+            <span class="section-tag">// 05. INITIALIZE COMMS</span>
+            <h1 class="section-title">Get In <span style="color: var(--primary-cyan);">Touch</span></h1>
+            <p class="section-desc">Have an engineering role, software internship, or project collaboration in mind? Feel free to reach out directly.</p>
+        </header>
+
+        <!-- Contact Section -->
+        <section class="content-section fade-in-up" id="contact">
+            <div class="contact-container">
+                <!-- Contact Info Panel -->
+                <div class="contact-info-card spotlight-card card-3d">
+                    <h3 class="contact-info-title">Let's build something remarkable.</h3>
+                    <p class="contact-info-text">
+                        I am currently open to full-stack internships, entry-level software development engineer (SDE) roles, and collaborative open-source AI projects.
+                        Drop a dispatch message or connect through my online coordinates!
+                    </p>
+
+                    <div class="contact-details-list">
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon">✉️</div>
+                            <div class="contact-detail-content">
+                                <span>Direct Email</span>
+                                <a href="mailto:sachin022AI0064@rdec.in">sachin022AI0064@rdec.in</a>
+                                <div>
+                                    <button class="copy-email-chip" id="copy-email-btn" data-cursor="COPY">
+                                        <span>📋 Copy Address</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon">🎓</div>
+                            <div class="contact-detail-content">
+                                <span>University &amp; Location</span>
+                                <p>Dr. A.P.J. Abdul Kalam Technical University (AKTU), Lucknow / Uttar Pradesh, India</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon">🌐</div>
+                            <div class="contact-detail-content">
+                                <span>GitHub Repository</span>
+                                <p><a href="https://github.com/sachin1399" target="_blank" style="color: var(--primary-cyan);">github.com/sachin1399</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-socials">
+                        <a href="https://github.com/sachin1399" target="_blank" rel="noopener noreferrer" class="social-pill" title="GitHub" data-cursor="GITHUB">
+                            <img src="github.svg" alt="GitHub">
+                        </a>
+                        <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="social-pill" title="LinkedIn" data-cursor="LINKEDIN">
+                            <img src="linkedin.svg" alt="LinkedIn">
+                        </a>
+                        <a href="mailto:sachin022AI0064@rdec.in" class="social-pill" title="Email" data-cursor="MAIL">
+                            <img src="mail.svg" alt="Email">
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-card spotlight-card card-3d">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label class="form-label" for="sender-name">Name / Handle</label>
+                            <input type="text" id="sender-name" class="form-input" placeholder="e.g. Alex Morgan" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="sender-email">Email Address</label>
+                            <input type="email" id="sender-email" class="form-input" placeholder="e.g. alex@company.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="sender-message">Message / Opportunity</label>
+                            <textarea id="sender-message" class="form-textarea" placeholder="Hello Sachin, I came across your portfolio and wanted to discuss an opportunity..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;" data-cursor="SEND">
+                            <span>Dispatch Message</span>
+                            <span>🚀</span>
+                        </button>
+
+                        <div class="form-status" id="form-status">
+                            ✓ Message received! Thank you, I will respond promptly.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Developer Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span style="color: var(--primary-cyan); font-weight: 700;">&lt;Sachin /&gt;</span> • Engineered with Three.js &amp; Pure Code
+                </div>
+                <div class="footer-copy">
+                    <span>Designed &amp; Developed with <span class="heart">♥</span> in 2026. All rights reserved.</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Three.js + Main Script -->
+    <script src="three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

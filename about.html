@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Sachin - Full-Stack Developer & CS Engineer</title>
+    <meta name="description" content="About Sachin - Background, Education at AKTU, Professional Internships, and Technical Skills Matrix.">
+    <link rel="icon" type="image/svg+xml" href="github.svg">
+
+    <!-- Google Fonts for Developer Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Three.js Interactive 3D WebGL Canvas -->
+    <canvas id="webgl-canvas"></canvas>
+
+    <!-- Custom Laser & Ring Dual Cursor -->
+    <div id="custom-cursor-dot"></div>
+    <div id="custom-cursor-ring">
+        <span class="cursor-text">VIEW</span>
+    </div>
+    <canvas id="cursor-trail-canvas"></canvas>
+
+    <div class="page-wrapper">
+        <!-- Navigation Bar -->
+        <nav class="navbar" id="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="brand-logo" data-cursor="ROOT">
+                    <span class="code-bracket">&lt;</span>Sachin<span class="code-bracket">.dev /&gt;</span>
+                    <span class="terminal-cursor"></span>
+                </a>
+
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html" class="nav-link" data-cursor="HOME">home</a></li>
+                    <li><a href="about.html" class="nav-link active" data-cursor="ABOUT">about</a></li>
+                    <li><a href="projects.html" class="nav-link" data-cursor="WORK">projects</a></li>
+                    <li><a href="certificates.html" class="nav-link" data-cursor="CERTS">certificates</a></li>
+                    <li><a href="terminal.html" class="nav-link" data-cursor="CLI">terminal</a></li>
+                    <li><a href="contact.html" class="nav-link" data-cursor="PING">contact</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <button class="icon-btn" id="sound-toggle" title="Toggle Tech Audio FX" aria-label="Toggle Audio" data-cursor="AUDIO">
+                        <span id="sound-icon">🔇</span>
+                    </button>
+                    <button class="icon-btn" id="theme-toggle" title="Toggle Theme" aria-label="Toggle Theme" data-cursor="THEME">
+                        <span id="theme-icon">🌙</span>
+                    </button>
+                    <button class="icon-btn mobile-menu-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+                        ☰
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Page Hero Header -->
+        <header class="page-hero-header fade-in-up">
+            <span class="section-tag">// 01. DEVELOPER IDENTITY &amp; ACADEMICS</span>
+            <h1 class="section-title">About <span style="color: var(--primary-cyan);">Sachin</span></h1>
+            <p class="section-desc">Engineering resilient systems, modular full-stack architectures, and AI-driven software solutions.</p>
+        </header>
+
+        <!-- About Narrative & Facts -->
+        <section class="content-section fade-in-up">
+            <div class="spotlight-card card-3d" style="padding: 2.5rem; margin-bottom: 3.5rem;">
+                <div style="display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; margin-bottom: 2rem;">
+                    <div style="width: 110px; height: 110px; border-radius: 50%; padding: 4px; background: linear-gradient(135deg, var(--primary-cyan), var(--accent-purple)); flex-shrink: 0;">
+                        <img src="image1.png" alt="Sachin" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+                    </div>
+                    <div>
+                        <h2 style="font-size: 1.8rem; margin-bottom: 0.4rem; color: var(--text-main);">Sachin</h2>
+                        <span style="font-family: var(--font-mono); font-size: 0.95rem; color: var(--primary-cyan);">Full-Stack Python &amp; Django Developer • B.Tech CSE '26</span>
+                    </div>
+                </div>
+
+                <p style="font-size: 1.05rem; line-height: 1.85; color: var(--text-body); margin-bottom: 1.25rem;">
+                    I am an enthusiastic Computer Science and Engineering undergraduate pursuing my Bachelor of Technology (2022 – 2026) at <strong>Dr. A.P.J. Abdul Kalam Technical University (AKTU), Lucknow</strong>.
+                    My programming philosophy revolves around writing clean, testable, and maintainable code that solves real-world operational challenges.
+                </p>
+                <p style="font-size: 1.05rem; line-height: 1.85; color: var(--text-body); margin-bottom: 1.25rem;">
+                    Through hands-on professional internships at <strong>Q-Spiders NOIDA</strong> and <strong>CodSoft</strong>, alongside intensive training as a certified <strong>Robotics &amp; AI Innovation Engineer</strong>, I have developed end-to-end expertise spanning backend microservices in Django, interactive React frontends, relational database optimization, and machine intelligence pipelines.
+                </p>
+                <p style="font-size: 1.05rem; line-height: 1.85; color: var(--text-body);">
+                    Whether architecting voice-enabled AI assistants, analyzing large datasets with Power BI, or collaborating in national hackathons, I approach every project with analytical rigor and attention to detail.
+                </p>
+            </div>
+        </section>
+
+        <!-- Professional Experience Timeline -->
+        <section class="content-section fade-in-up" id="experience">
+            <div class="section-header">
+                <span class="section-tag">// CAREER TIMELINE</span>
+                <h2 class="section-title">Professional Experience</h2>
+                <p class="section-desc">Practical industry internships and engineering responsibilities.</p>
+            </div>
+
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+
+                <!-- Experience Item 1 -->
+                <div class="timeline-item fade-in-up">
+                    <div class="timeline-node"></div>
+                    <div class="exp-card spotlight-card card-3d">
+                        <div class="exp-header">
+                            <h3 class="exp-role">Full-Stack Development Intern</h3>
+                            <span class="exp-badge">Sep 2025 - Dec 2025</span>
+                        </div>
+                        <div class="exp-org">Q-Spider — NOIDA</div>
+                        <ul class="exp-details">
+                            <li>Completed an intensive 4-month professional internship focused on Python Full-Stack web development.</li>
+                            <li>Engineered backend business logic, database schemas, and RESTful routing using <strong>Python, Advanced Python &amp; Django</strong>.</li>
+                            <li>Constructed responsive, interactive frontend components with <strong>ReactJS, HTML5, and CSS3</strong>.</li>
+                            <li>Practiced agile development methodologies, code reviews, and performance optimizations.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience Item 2 -->
+                <div class="timeline-item fade-in-up">
+                    <div class="timeline-node"></div>
+                    <div class="exp-card spotlight-card card-3d">
+                        <div class="exp-header">
+                            <h3 class="exp-role">Python Programming Intern</h3>
+                            <span class="exp-badge">Jul 2025 - Aug 2025</span>
+                        </div>
+                        <div class="exp-org">CodSoft — Remote (ISO 9001:2015 &amp; MSME Registered)</div>
+                        <ul class="exp-details">
+                            <li>Strengthened core Python foundations including object-oriented programming (OOP), data structures, control flow, and error handling.</li>
+                            <li>Authored automated scripts and algorithmic solutions emphasizing code modularity and execution efficiency.</li>
+                            <li>Collaborated with mentor reviews to adhere to clean code standards and PEP 8 guidelines.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comprehensive Technical Skills Matrix -->
+        <section class="content-section fade-in-up" id="skills">
+            <div class="section-header">
+                <span class="section-tag">// TECH STACK</span>
+                <h2 class="section-title">Technical Proficiency Matrix</h2>
+                <p class="section-desc">Tools, languages, and frameworks I use to engineer robust software solutions.</p>
+            </div>
+
+            <div class="skills-category-grid">
+                <!-- Group 1: Languages & Backend -->
+                <div class="skills-group-card spotlight-card card-3d">
+                    <div class="group-header">
+                        <span class="group-icon">⚡</span>
+                        <h3 class="group-title">Languages &amp; Backend</h3>
+                    </div>
+                    <div class="skill-pills-wrap">
+                        <span class="skill-pill" data-cursor="TECH">🐍 Python</span>
+                        <span class="skill-pill" data-cursor="TECH">🔥 Django</span>
+                        <span class="skill-pill" data-cursor="TECH">🟡 JavaScript (ES6+)</span>
+                        <span class="skill-pill" data-cursor="TECH">🟢 Node.js</span>
+                        <span class="skill-pill" data-cursor="TECH">⚙️ C Language</span>
+                        <span class="skill-pill" data-cursor="TECH">🌐 REST APIs</span>
+                    </div>
+                </div>
+
+                <!-- Group 2: Frontend & UI -->
+                <div class="skills-group-card spotlight-card card-3d">
+                    <div class="group-header">
+                        <span class="group-icon">🎨</span>
+                        <h3 class="group-title">Frontend &amp; Creative Web</h3>
+                    </div>
+                    <div class="skill-pills-wrap">
+                        <span class="skill-pill" data-cursor="TECH">⚛️ ReactJS</span>
+                        <span class="skill-pill" data-cursor="TECH">🌐 Three.js 3D</span>
+                        <span class="skill-pill" data-cursor="TECH">📄 HTML5</span>
+                        <span class="skill-pill" data-cursor="TECH">🎭 CSS3 &amp; Flex/Grid</span>
+                        <span class="skill-pill" data-cursor="TECH">📱 Responsive Design</span>
+                        <span class="skill-pill" data-cursor="TECH">✨ Glassmorphism UI</span>
+                    </div>
+                </div>
+
+                <!-- Group 3: CS Core & Foundations -->
+                <div class="skills-group-card spotlight-card card-3d">
+                    <div class="group-header">
+                        <span class="group-icon">🧠</span>
+                        <h3 class="group-title">Computer Science Core</h3>
+                    </div>
+                    <div class="skill-pills-wrap">
+                        <span class="skill-pill" data-cursor="TECH">🌳 Data Structures (DSA)</span>
+                        <span class="skill-pill" data-cursor="TECH">📐 Analysis of Algorithms (DAA)</span>
+                        <span class="skill-pill" data-cursor="TECH">💽 Operating Systems (OS)</span>
+                        <span class="skill-pill" data-cursor="TECH">🏛️ DBMS &amp; Architecture</span>
+                        <span class="skill-pill" data-cursor="TECH">🔄 Automata Theory</span>
+                        <span class="skill-pill" data-cursor="TECH">🛠️ SDE Principles</span>
+                    </div>
+                </div>
+
+                <!-- Group 4: Data, AI & Databases -->
+                <div class="skills-group-card spotlight-card card-3d">
+                    <div class="group-header">
+                        <span class="group-icon">📊</span>
+                        <h3 class="group-title">Data, AI &amp; Hardware</h3>
+                    </div>
+                    <div class="skill-pills-wrap">
+                        <span class="skill-pill" data-cursor="TECH">🤖 Robotics &amp; AI Systems</span>
+                        <span class="skill-pill" data-cursor="TECH">🔌 Electronics &amp; Sensors</span>
+                        <span class="skill-pill" data-cursor="TECH">🐬 MySQL</span>
+                        <span class="skill-pill" data-cursor="TECH">📈 Power BI</span>
+                        <span class="skill-pill" data-cursor="TECH">🧠 AI Agents &amp; LLMs</span>
+                        <span class="skill-pill" data-cursor="TECH">🔍 Data Analytics</span>
+                        <span class="skill-pill" data-cursor="TECH">🗣️ Speech &amp; Audio APIs</span>
+                    </div>
+                </div>
+
+                <!-- Group 5: Developer Tools & Workflow -->
+                <div class="skills-group-card spotlight-card card-3d">
+                    <div class="group-header">
+                        <span class="group-icon">🛠️</span>
+                        <h3 class="group-title">Dev Tools &amp; Environment</h3>
+                    </div>
+                    <div class="skill-pills-wrap">
+                        <span class="skill-pill" data-cursor="TECH">🐙 Git &amp; GitHub</span>
+                        <span class="skill-pill" data-cursor="TECH">💻 VS Code</span>
+                        <span class="skill-pill" data-cursor="TECH">🖥️ Visual Studio</span>
+                        <span class="skill-pill" data-cursor="TECH">📟 Windows Terminal / Bash</span>
+                        <span class="skill-pill" data-cursor="TECH">📦 NPM / Pip</span>
+                        <span class="skill-pill" data-cursor="TECH">🔧 Postman</span>
+                    </div>
+                </div>
+
+                <!-- Group 6: Analytical & Soft Skills -->
+                <div class="skills-group-card spotlight-card card-3d">
+                    <div class="group-header">
+                        <span class="group-icon">💡</span>
+                        <h3 class="group-title">Core Competencies</h3>
+                    </div>
+                    <div class="skill-pills-wrap">
+                        <span class="skill-pill" data-cursor="TECH">🧩 Analytical Thinking</span>
+                        <span class="skill-pill" data-cursor="TECH">🎯 Problem Solving</span>
+                        <span class="skill-pill" data-cursor="TECH">🤝 Team Collaboration</span>
+                        <span class="skill-pill" data-cursor="TECH">📚 Fast Technical Learner</span>
+                        <span class="skill-pill" data-cursor="TECH">⚡ Agile Execution</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page Navigation CTA -->
+            <div class="section-cta-wrap">
+                <a href="projects.html" class="btn btn-primary" data-cursor="PROJECTS" style="margin-right: 1rem;">
+                    <span>View Projects</span> 🚀
+                </a>
+                <a href="certificates.html" class="btn btn-secondary" data-cursor="CERTS">
+                    <span>Inspect Certificates</span> 🏆
+                </a>
+            </div>
+        </section>
+
+        <!-- Developer Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span style="color: var(--primary-cyan); font-weight: 700;">&lt;Sachin /&gt;</span> • Engineered with Three.js &amp; Pure Code
+                </div>
+                <div class="footer-copy">
+                    <span>Designed &amp; Developed with <span class="heart">♥</span> in 2026. All rights reserved.</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Three.js + Main Script -->
+    <script src="three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
