@@ -815,22 +815,16 @@ Ready to build, ship, and scale high-impact software solutions with your team!`
             appearOnScroll.observe(fader);
         });
 
-        // Active Section Scroll Spy
-        const spyObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    const id = entry.target.getAttribute('id');
-                    navItems.forEach((link) => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('href') === `#${id}`) {
-                            link.classList.add('active');
-                        }
-                    });
-                }
-            });
-        }, { threshold: 0.3 });
-
-        sections.forEach((sec) => spyObserver.observe(sec));
+        // Multi-Page Active Nav Detection
+        const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+        navItems.forEach((link) => {
+            const linkHref = link.getAttribute('href');
+            if (linkHref === currentPath || (currentPath === '' && linkHref === 'index.html')) {
+                link.classList.add('active');
+            } else if (linkHref && !linkHref.startsWith('#')) {
+                link.classList.remove('active');
+            }
+        });
     } else {
         // Fallback for older browsers
         faders.forEach((f) => f.classList.add('visible'));
