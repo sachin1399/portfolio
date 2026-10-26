@@ -302,7 +302,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Interactive Cursor Hover Events
         const interactiveElements = document.querySelectorAll(
-            'a, button, input, textarea, .card-3d, .skill-pill, .command-chip, .window-tab, .filter-btn'
+            'a, button, input, textarea, .card-3d, .skill-pill, .command-chip, .window-tab, .filter-btn, .cert-filter-btn, .cert-card-img-wrap'
         );
 
         interactiveElements.forEach((el) => {
@@ -444,22 +444,42 @@ document.addEventListener('DOMContentLoaded', () => {
   • Data & AI: Robotics & AI Systems, MySQL, Power BI, OpenAI GPT, Electronics, Speech APIs
   • Tools: Git, GitHub, VS Code, Windows Terminal`,
 
-        certs: `Honors & Certified Credentials:
-  ★ Robotics & AI Innovation Engineer (Jun - Sep 2026)
-    - The Smart Minds AI Lab (A Unit of Roboveritas AI Solutions)
-    - Mastered autonomous robotics, artificial intelligence, electronics, & project training.
-  • Data Analytics & Forensic Technology — Deloitte Simulation
-  • AI Agent Hackathon — Product Space
-  • Certificate of Appreciation — Zyntiq Organization
-  • Vibe Coding Session — Rehber Program`,
-        achievements: `Honors & Certified Credentials:
-  ★ Robotics & AI Innovation Engineer (Jun - Sep 2026)
-    - The Smart Minds AI Lab (A Unit of Roboveritas AI Solutions)
-    - Mastered autonomous robotics, artificial intelligence, electronics, & project training.
-  • Data Analytics & Forensic Technology — Deloitte Simulation
-  • AI Agent Hackathon — Product Space
-  • Certificate of Appreciation — Zyntiq Organization
-  • Vibe Coding Session — Rehber Program`,
+        certs: `Tiered Credential Registry (10 Verified Accreditations):
+  [LEVEL 1: PREMIER & ELITE NATIONAL]
+  ★ Robotics & AI Innovation Engineer — The Smart Minds AI Lab (3 Months STEAM Trainer)
+  ★ Python for Data Science (Elite 66%) — NPTEL, IIT Madras (MoE Govt. of India, 2 Credits)
+
+  [LEVEL 2: INDUSTRY INTERNSHIPS & CORPORATE]
+  ◆ Python Programming Virtual Internship — CodSoft (ISO 9001:2015 & MSME, C.ID: 4169d07)
+  ◆ Data Analytics & Forensic Technology Simulation — Deloitte (Code: FCbYJoSbr2McAJ4hs)
+
+  [LEVEL 3: NATIONAL HACKATHONS & ASSESSMENTS]
+  ▲ Adobe India Hackathon (Round 1 - MCQ + Coding) — Adobe & Unstop (Team Hustle Coder)
+  ▲ AI Agent Hackathon — Product Space & Unstop (Autonomous Workflows)
+  ▲ Python (Basic) Skill Certification — HackerRank (ID: 5D1AC2FA43A3)
+  ▲ SQL (Basic) Skill Certification — HackerRank (ID: 5F66B61ECA14)
+
+  [LEVEL 4: BI & DATA MASTERCLASSES]
+  ● Power BI Workshop: AI-Powered Dashboards — OfficeMaster
+  ● Power BI Dashboard for Data Analytics — WsCube Tech (Reg: WS/2025/M/11746)`,
+        achievements: `Tiered Credential Registry (10 Verified Accreditations):
+  [LEVEL 1: PREMIER & ELITE NATIONAL]
+  ★ Robotics & AI Innovation Engineer — The Smart Minds AI Lab (3 Months STEAM Trainer)
+  ★ Python for Data Science (Elite 66%) — NPTEL, IIT Madras (MoE Govt. of India, 2 Credits)
+
+  [LEVEL 2: INDUSTRY INTERNSHIPS & CORPORATE]
+  ◆ Python Programming Virtual Internship — CodSoft (ISO 9001:2015 & MSME, C.ID: 4169d07)
+  ◆ Data Analytics & Forensic Technology Simulation — Deloitte (Code: FCbYJoSbr2McAJ4hs)
+
+  [LEVEL 3: NATIONAL HACKATHONS & ASSESSMENTS]
+  ▲ Adobe India Hackathon (Round 1 - MCQ + Coding) — Adobe & Unstop (Team Hustle Coder)
+  ▲ AI Agent Hackathon — Product Space & Unstop (Autonomous Workflows)
+  ▲ Python (Basic) Skill Certification — HackerRank (ID: 5D1AC2FA43A3)
+  ▲ SQL (Basic) Skill Certification — HackerRank (ID: 5F66B61ECA14)
+
+  [LEVEL 4: BI & DATA MASTERCLASSES]
+  ● Power BI Workshop: AI-Powered Dashboards — OfficeMaster
+  ● Power BI Dashboard for Data Analytics — WsCube Tech (Reg: WS/2025/M/11746)`,
 
         projects: `Featured Systems & Code Repositories:
   [1] Voice-Controlled Virtual Assistant (Python, OpenAI GPT, SpeechRecognition, gTTS)
@@ -822,7 +842,7 @@ Ready to build, ship, and scale high-impact software solutions with your team!`
     const previewModal = document.getElementById('preview-modal');
     const modalImg = document.getElementById('modal-img');
     const modalCloseBtn = document.getElementById('modal-close-btn');
-    const triggerElements = document.querySelectorAll('.project-preview-frame, .inspect-output-btn, .cert-preview-wrapper');
+    const triggerElements = document.querySelectorAll('.project-preview-frame, .inspect-output-btn, .cert-preview-wrapper, .cert-card-img-wrap');
 
     function openOutputModal(src) {
         if (!previewModal || !modalImg || !src) return;
@@ -861,5 +881,37 @@ Ready to build, ship, and scale high-impact software solutions with your team!`
         if (e.key === 'Escape' && previewModal && previewModal.classList.contains('active')) {
             closeOutputModal();
         }
+    });
+
+    /* ===================================================================
+       14. Certificate Tier Category Filtering
+       =================================================================== */
+    const certFilterButtons = document.querySelectorAll('.cert-filter-btn');
+    const certLevelBlocks = document.querySelectorAll('.cert-level-block');
+
+    certFilterButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            certFilterButtons.forEach((b) => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filterTier = btn.getAttribute('data-cert-filter');
+
+            certLevelBlocks.forEach((block) => {
+                const blockTier = block.getAttribute('data-tier');
+                if (filterTier === 'all' || blockTier === filterTier) {
+                    block.style.display = 'block';
+                    block.style.opacity = '0';
+                    block.style.transform = 'translateY(15px)';
+                    setTimeout(() => {
+                        block.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+                        block.style.opacity = '1';
+                        block.style.transform = 'translateY(0)';
+                    }, 30);
+                } else {
+                    block.style.display = 'none';
+                }
+            });
+            playCyberBeep(700, 'sine', 0.04, 0.03);
+        });
     });
 });
