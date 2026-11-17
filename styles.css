@@ -1,5 +1,5 @@
 /* ===================================================================
-   SACHIN.DEV | Modern Developer Portfolio Stylesheet
+   Sachin | Modern Developer Portfolio Stylesheet
    Theme: Cyber-Engineering / High-Tech Developer Aesthetic
    Features: Custom Cursor, Three.js Layering, 3D Tilt, Spotlight Glow,
              Interactive Terminal, Modern Glassmorphism
@@ -271,17 +271,26 @@ body.cursor-hover #custom-cursor-dot {
 }
 
 .brand-logo {
-  font-family: var(--font-mono);
+  font-family: var(--font-display);
   font-size: 1.35rem;
   font-weight: 700;
   color: var(--text-main);
   display: flex;
   align-items: center;
-  gap: 0.3rem;
+  gap: 0.35rem;
   cursor: pointer;
+  text-decoration: none;
 }
 
-.brand-logo .code-bracket {
+.brand-name {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: var(--text-main);
+}
+
+.brand-logo:hover .brand-name {
   color: var(--primary-cyan);
 }
 
@@ -314,14 +323,6 @@ body.cursor-hover #custom-cursor-dot {
   position: relative;
   padding: 0.4rem 0.2rem;
   transition: color var(--transition-fast);
-}
-
-.nav-link::before {
-  content: '/';
-  color: var(--primary-cyan);
-  opacity: 0.6;
-  margin-right: 3px;
-  font-weight: 400;
 }
 
 .nav-link:hover,

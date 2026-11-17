@@ -1,5 +1,5 @@
 /**
- * SACHIN.DEV | Modern Developer Portfolio Engine
+ * Sachin | Modern Developer Portfolio Engine
  * Features:
  *  - Three.js Interactive 3D Cyber Core & Constellation Background
  *  - Dual Custom Cursor (Laser Dot + Ring Follower + Spark Particle Trail)
